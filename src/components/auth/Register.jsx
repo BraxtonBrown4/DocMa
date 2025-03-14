@@ -7,14 +7,14 @@ export const Register = (props) => {
   const [user, setUser] = useState({
     email: "",
     fullName: "",
-    cohort: 0,
+    department: 0,
   })
   let navigate = useNavigate()
 
   const registerNewUser = () => {
     const newUser = {
       ...user,
-      cohort: parseInt(user.cohort),
+      department: parseInt(user.department),
     }
 
     createUser(newUser).then((createdUser) => {
@@ -52,51 +52,39 @@ export const Register = (props) => {
   }
 
   return (
-    <main className="auth-container">
-      <form className="auth-form" onSubmit={handleRegister}>
-        <h1 className="header">Learning Moments</h1>
+    <main>
+      <form onSubmit={handleRegister}>
+        <h1>Learning Moments</h1>
         <h2>Please Register</h2>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="text"
-              id="fullName"
-              className="auth-form-input"
-              placeholder="Enter your name"
-              required
-              autoFocus
-            />
-          </div>
+        <fieldset>
+          <input
+            onChange={updateUser}
+            type="text"
+            id="fullName"
+            className="auth-form-input"
+            placeholder="Enter your name"
+            required
+            autoFocus
+          />
         </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="email"
-              id="email"
-              className="auth-form-input"
-              placeholder="Email address"
-              required
-            />
-          </div>
+        <fieldset>
+          <input
+            onChange={updateUser}
+            type="email"
+            id="email"
+            className="auth-form-input"
+            placeholder="Email address"
+            required
+          />
         </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="number"
-              id="cohort"
-              className="auth-form-input"
-              placeholder="Cohort #"
-              required
-            />
-          </div>
+        <fieldset>
+          
         </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <button type="submit">Register</button>
-          </div>
+        <fieldset>
+          <button type="submit">Sign In</button>
+        </fieldset>
+        <fieldset>
+          <button onClick={()=>{navigate("/login")}}>Cancel</button>
         </fieldset>
       </form>
     </main>
