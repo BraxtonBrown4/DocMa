@@ -1,0 +1,81 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "name": "Human Resources"
+    },
+    {
+      "id": 2,
+      "name": "Finance"
+    },
+    {
+      "id": 3,
+      "name": "Marketing"
+    },
+    {
+      "id": 4,
+      "name": "Sales"
+    },
+    {
+      "id": 5,
+      "name": "IT Support"
+    },
+    {
+      "id": 6,
+      "name": "Product Management"
+    },
+    {
+      "id": 7,
+      "name": "Engineering"
+    },
+    {
+      "id": 8,
+      "name": "Customer Service"
+    },
+    {
+      "id": 9,
+      "name": "Legal"
+    },
+    {
+      "id": 10,
+      "name": "Operations"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Braxton Brown",
+      "email": "email@email.com",
+      "employmentDate": 1741967778,
+      "title": "production technologies manager",
+      "departmentId": 5
+    },
+    {
+      "departmentId": 0,
+      "title": "k",
+      "fullName": "l",
+      "email": "a@email.com",
+      "employmentDate": 1741977826,
+      "id": 2
+    },
+    {
+      "departmentId": 1,
+      "title": "a",
+      "fullName": "a",
+      "email": "a@email.co",
+      "employmentDate": 1741978481,
+      "id": 3
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "departmentId": 5,
+      "title": "How to make an example document",
+      "userId": 1,
+      "body": "Example Document Body",
+      "createdDate": 1741967778
+    }
+  ],
+  "userDocFavorites": []
+}

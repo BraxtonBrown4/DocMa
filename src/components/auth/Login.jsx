@@ -5,6 +5,7 @@ import { getUserByEmail } from "../../services/userService"
 
 export const Login = () => {
   const [email, set] = useState("")
+  const [redHighlight, setRedHighlight] = useState("")
   const navigate = useNavigate()
 
   const handleLogin = (e) => {
@@ -14,7 +15,7 @@ export const Login = () => {
       if (foundUsers.length === 1) {
         const user = foundUsers[0]
         localStorage.setItem(
-          "learning_user",
+          "docma_user",
           JSON.stringify({
             id: user.id,
           })
@@ -23,6 +24,7 @@ export const Login = () => {
         navigate("/")
       } else {
         window.alert("Invalid login")
+        setRedHighlight("red-highlight")
       }
     })
   }
@@ -36,9 +38,9 @@ export const Login = () => {
         <fieldset className="vertical-spacing">
           <input
             type="email"
-            className="input-field"
+            className={`input-field ${redHighlight}`}
             value={email}
-            onChange={(evt) => set(evt.target.value)}
+            onChange={(evt) => {set(evt.target.value), setRedHighlight('')}}
             placeholder="Email address"
             required
             autoFocus
