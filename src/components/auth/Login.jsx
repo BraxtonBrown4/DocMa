@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-// import "./Login.css"
+import "./Login.css"
 import { getUserByEmail } from "../../services/userService"
 
 export const Login = () => {
@@ -29,34 +28,29 @@ export const Login = () => {
   }
 
   return (
-    <main className="auth-container">
-      <section>
-        <form className="auth-form" onSubmit={handleLogin}>
-          <h1 className="header">Learning Moments</h1>
-          <h2>Please sign in</h2>
-          <fieldset className="auth-fieldset">
-            <div>
-              <input
-                type="email"
-                value={email}
-                className="auth-form-input"
-                onChange={(evt) => set(evt.target.value)}
-                placeholder="Email address"
-                required
-                autoFocus
-              />
-            </div>
-          </fieldset>
-          <fieldset className="auth-fieldset">
-            <div>
-              <button type="submit">Sign in</button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-      <section className="register-link">
-        <Link to="/register">Not a member yet?</Link>
-      </section>
+    <main className="login-container">
+      <form onSubmit={handleLogin}>
+        <h1 className="border-box">Welcome To DocMa</h1>
+        <h2>A User Friendly Document Manager</h2>
+        <h1 className="vertical-spacing">Login</h1>
+        <fieldset className="vertical-spacing">
+          <input
+            type="email"
+            className="input-field"
+            value={email}
+            onChange={(evt) => set(evt.target.value)}
+            placeholder="Email address"
+            required
+            autoFocus
+          />
+        </fieldset>
+        <fieldset className="vertical-spacing">
+          <button className="login-btn" type="submit">Login</button>
+        </fieldset>
+        <fieldset className="vertical-spacing">
+          <button className="login-btn" onClick={() => { navigate('/register') }}>Create An Account</button>
+        </fieldset>
+      </form>
     </main>
   )
 }
