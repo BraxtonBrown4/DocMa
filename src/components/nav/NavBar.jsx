@@ -3,7 +3,7 @@ import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Dropdown } from "react-bootstrap"
 
-export const NavBar = () => {
+export const NavBar = ({currentUser}) => {
     const navigate = useNavigate()
 
     return (
@@ -12,10 +12,10 @@ export const NavBar = () => {
                 <Link to="/my-docs">My Docs</Link>
             </div>
             <div className="nav-btn">
-                <Link to="/all-docs">All Docs</Link>
+                <Link to="/favorites">Favorites</Link>
             </div>
             <div className="nav-btn">
-                <Link to="/favorites">Favorites</Link>
+                <Link to="/all-docs">All Docs</Link>
             </div>
             <div className="nav-btn">
                 <Link to="/create-doc">Create Doc</Link>
@@ -23,7 +23,7 @@ export const NavBar = () => {
             <Dropdown className="dropdown-positioning">
                 <Dropdown.Toggle className="dropdown-size">Profile</Dropdown.Toggle>
                 <Dropdown.Menu>
-                    <Dropdown.Item as={Link} to="/profile">View Profile</Dropdown.Item>
+                    <Dropdown.Item as={Link} to={`/profile/${currentUser.id}`}>View Profile</Dropdown.Item>
                     <Dropdown.Item onClick={() => {localStorage.getItem("docma_user") && localStorage.removeItem("docma_user"), navigate("/", { replace: true })}}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>

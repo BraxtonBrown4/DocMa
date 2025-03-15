@@ -12,7 +12,7 @@ export const App = () => {
       <Route path="/register" element={<Register />} />
       <Route path="*" element={
         <Authorized>
-          <ApplicationViews currentUser={currentUser}/>
+          <ApplicationViews/>
         </Authorized>
       } />
     </Routes>
