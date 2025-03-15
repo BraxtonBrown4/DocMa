@@ -5,7 +5,7 @@ import { Dropdown } from "react-bootstrap"
 
 export const NavBar = () => {
     const navigate = useNavigate()
-// My Docs, Favorites, Create Doc, All Docs
+
     return (
         <div className="navBar">
             <div className="nav-btn">
