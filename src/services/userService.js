@@ -13,3 +13,9 @@ export const createUser = (user) => {
     body: JSON.stringify(user),
   }).then((res) => res.json())
 }
+
+export const getProfileById = (Id) => {
+  return fetch(`http://localhost:8088/users?id=${Id}&_expand=department&_embed=documents`).then((res) =>
+    res.json()
+  )
+}

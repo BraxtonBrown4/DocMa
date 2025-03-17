@@ -12,7 +12,7 @@ export const ApplicationViews = () => {
                 {/* <Route path="/favorites" element={<Favorites />}></Route> */}
                 {/* <Route path="/all-docs" element={<AllDocs />}></Route> */}
                 {/* <Route path="/create-doc" element={<CreateDoc />}></Route> */}
-                <Route path="/profile/:id" element={<Profile />}></Route>
+                <Route path="/profile/:profileId" element={<Profile />}></Route>
             </Route>
         </Routes>
     )
