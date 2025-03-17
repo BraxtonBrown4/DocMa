@@ -1,0 +1,33 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: clamp(100px, 10vh, 10vh);
+    width: 100vw;
+    background-color: #343a40;
+    justify-content: space-around;
+}
+
+.nav-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: #0d6efd;
+    transition: background-color 0.3s ease;
+
+    a {
+        color: white;
+        text-decoration: unset;
+    }
+}
+
+.nav-btn:hover {
+    background-color: blue;
+}
+
+.dropdown-size, .nav-btn {
+    height: 50px;
+    width: 110px;
+}

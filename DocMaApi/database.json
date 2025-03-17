@@ -49,30 +49,6 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5
-    },
-    {
-      "departmentId": 0,
-      "title": "k",
-      "fullName": "l",
-      "email": "a@email.com",
-      "employmentDate": 1741977826,
-      "id": 2
-    },
-    {
-      "departmentId": 1,
-      "title": "a",
-      "fullName": "a",
-      "email": "a@email.co",
-      "employmentDate": 1741978481,
-      "id": 3
-    },
-    {
-      "departmentId": 1,
-      "title": "email",
-      "fullName": "email",
-      "email": "mail@mile.com",
-      "employmentDate": 1741978870,
-      "id": 4
     }
   ],
   "documents": [
