@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { Dropdown, Form } from "react-bootstrap"
+import { Dropdown, Button } from "react-bootstrap"
 import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../contexts/UserIdContext"
 import { getProfileById } from "../../services/userService"
@@ -56,10 +56,10 @@ export const CreateDoc = () => {
     }
 
     return (
-        <Form className="doc-container">
-            <fieldset>
-                <Dropdown>
-                    <Dropdown.Toggle id="dropdown-basic">
+        <div className="doc-container">
+            <div className="document-info">
+                <Dropdown className="departments-dropdown">
+                    <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle">
                         {departmentPH}
                     </Dropdown.Toggle>
 
@@ -69,9 +69,9 @@ export const CreateDoc = () => {
                         })}
                     </Dropdown.Menu>
                 </Dropdown>
-                <div>
+                <div className="input-and-date">
                     <input type="text" placeholder="Title" id="title" onChange={handleInputChange} required />
-                    <span>{
+                    <span>Created on {
                         new Date(document.createdDate * 1000).toLocaleDateString('en-US',
                             {
                                 year: 'numeric',
@@ -81,10 +81,10 @@ export const CreateDoc = () => {
                         )
                     }</span>
                 </div>
-                <h2>{profileInfo.fullName}</h2>
-                <textarea placeholder="Body" id="body" onChange={handleInputChange}></textarea>
-                <button onClick={handleCreate}>Create Document</button>
-            </fieldset>
-        </Form>
+                <h2>By {profileInfo.fullName}</h2>
+                <textarea className="text-body" placeholder="Body" id="body" onChange={handleInputChange}></textarea>
+                <Button onClick={handleCreate} className="btn btn-success">Create Document</Button>
+            </div>
+        </div>
     )
 }
