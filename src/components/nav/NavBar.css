@@ -1,11 +1,11 @@
 .navBar {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
-    height: auto;
+    height: clamp(100px, 10vh, 10vh);
     width: 100vw;
     background-color: #343a40;
+    justify-content: space-around;
 }
 
 .nav-btn {
@@ -16,7 +16,6 @@
     border-radius: 7px;
     background-color: #0d6efd;
     transition: background-color 0.3s ease;
-    margin: 2.5% auto;
 
     a {
         color: white;
@@ -30,9 +29,5 @@
 
 .dropdown-size, .nav-btn {
     height: 50px;
-    width: 80px;
-}
-
-.dropdown-positioning {
-    margin: 2.5% 2.5% 2.5% auto;
+    width: 110px;
 }

@@ -8,19 +8,21 @@ export const NavBar = ({currentUser}) => {
 
     return (
         <div className="navBar">
-            <div className="nav-btn">
-                <Link to="/my-docs">My Docs</Link>
-            </div>
-            <div className="nav-btn">
-                <Link to="/favorites">Favorites</Link>
-            </div>
-            <div className="nav-btn">
-                <Link to="/all-docs">All Docs</Link>
-            </div>
+
+            <Dropdown>
+                <Dropdown.Toggle className="dropdown-size">Documents</Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item as={Link} to={`/my-docs`}>My Docs</Dropdown.Item>
+                    <Dropdown.Item as={Link} to={`/all-docs`}>All Docs</Dropdown.Item>
+                    <Dropdown.Item as={Link} to={`/favorites`}>Favorite Docs</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+
             <div className="nav-btn">
                 <Link to="/create-doc">Create Doc</Link>
             </div>
-            <Dropdown className="dropdown-positioning">
+
+            <Dropdown>
                 <Dropdown.Toggle className="dropdown-size">Profile</Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item as={Link} to={`/profile/${currentUser.id}`}>View Profile</Dropdown.Item>
