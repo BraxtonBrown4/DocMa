@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react"
 import { Dropdown, Form } from "react-bootstrap"
 import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../contexts/UserIdContext"
+import { getProfileById } from "../../services/userService"
 
 export const CreateDoc = () => {
     const { userId } = useContext(UserContext)
+    const [profileInfo, setProfileInfo] = useState({})
     const [allDepartments, setAllDepartments] = useState([])
     const [departmentPH, setDepartmentPH] = useState('Departments')
     const [document, setDocument] = useState({
@@ -16,17 +18,22 @@ export const CreateDoc = () => {
     })
 
     useEffect(() => {
-        getAllDepartments().then((res) => {
-            setAllDepartments(res)
-        })
-    }, [])
 
-    useEffect(() => {
-        const copy = { ...document }
-        copy.userId = userId
-        copy.createdDate = Math.floor(Date.now() / 1000)
-
-        setDocument(copy)
+        if (userId > 0) {
+            getAllDepartments().then((res) => {
+                setAllDepartments(res)
+            })
+            
+            getProfileById(userId).then((res)=>{
+                setProfileInfo(res)
+            })
+    
+            const copy = { ...document }
+            copy.userId = userId
+            copy.createdDate = Math.floor(Date.now() / 1000)
+    
+            setDocument(copy)
+        }
     }, [userId])
 
     const handleDepartmentClick = (depId, depName) => {
@@ -74,6 +81,7 @@ export const CreateDoc = () => {
                         )
                     }</span>
                 </div>
+                <h2>{profileInfo.fullName}</h2>
             </fieldset>
         </Form>
     )

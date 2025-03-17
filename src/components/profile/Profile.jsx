@@ -11,7 +11,7 @@ export const Profile = () => {
 
     useEffect(() => {
         getProfileById(profileId).then((res) => {
-            setProfileInfo(res[0])
+            setProfileInfo(res)
         })
     }, [profileId])
 
