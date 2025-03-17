@@ -3,6 +3,7 @@ import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 import { Authorized } from "./views/Authorized"
 import { ApplicationViews } from "./views/ApplicationViews"
+import { UserProvider } from "./contexts/UserIdContext"
 
 export const App = () => {
 
@@ -12,7 +13,9 @@ export const App = () => {
       <Route path="/register" element={<Register />} />
       <Route path="*" element={
         <Authorized>
-          <ApplicationViews/>
+          <UserProvider>
+            <ApplicationViews />
+          </UserProvider>
         </Authorized>
       } />
     </Routes>
