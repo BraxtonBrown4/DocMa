@@ -2,8 +2,11 @@ import { useNavigate, Link } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Dropdown } from "react-bootstrap"
+import { useContext } from "react"
+import { UserContext } from "../../contexts/UserIdContext"
 
-export const NavBar = ({currentUser}) => {
+export const NavBar = () => {
+    const {userId} = useContext(UserContext)
     const navigate = useNavigate()
 
     return (
@@ -25,7 +28,7 @@ export const NavBar = ({currentUser}) => {
             <Dropdown>
                 <Dropdown.Toggle className="dropdown-size">Profile</Dropdown.Toggle>
                 <Dropdown.Menu>
-                    <Dropdown.Item as={Link} to={`/profile/${currentUser.id}`}>View Profile</Dropdown.Item>
+                    <Dropdown.Item as={Link} to={`/profile/${userId}`}>View Profile</Dropdown.Item>
                     <Dropdown.Item onClick={() => {localStorage.getItem("docma_user") && localStorage.removeItem("docma_user"), navigate("/", { replace: true })}}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
