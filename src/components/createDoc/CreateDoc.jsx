@@ -23,15 +23,15 @@ export const CreateDoc = () => {
             getAllDepartments().then((res) => {
                 setAllDepartments(res)
             })
-            
-            getProfileById(userId).then((res)=>{
+
+            getProfileById(userId).then((res) => {
                 setProfileInfo(res)
             })
-    
+
             const copy = { ...document }
             copy.userId = userId
             copy.createdDate = Math.floor(Date.now() / 1000)
-    
+
             setDocument(copy)
         }
     }, [userId])
@@ -45,16 +45,19 @@ export const CreateDoc = () => {
     }
 
     const handleInputChange = (event) => {
+        const copy = { ...document }
+        copy[event.target.id] = event.target.value
+        setDocument(copy)
+    }
 
+    const handleCreate = () => {
+        
     }
 
     return (
         <Form>
             <fieldset>
                 {/* 
-                department
-                title date created
-                author
                 body 
                 */}
 
@@ -70,7 +73,7 @@ export const CreateDoc = () => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <div>
-                    <input type="text" placeholder="Title" onChange={handleInputChange} required />
+                    <input type="text" placeholder="Title" id="title" onChange={handleInputChange} required />
                     <span>{
                         new Date(document.createdDate * 1000).toLocaleDateString('en-US',
                             {
@@ -82,6 +85,8 @@ export const CreateDoc = () => {
                     }</span>
                 </div>
                 <h2>{profileInfo.fullName}</h2>
+                <textarea placeholder="Body" id="body" onChange={handleInputChange}></textarea>
+                <button onClick={handleCreate}>Create Document</button>
             </fieldset>
         </Form>
     )
