@@ -3,6 +3,7 @@ import { Dropdown, Form } from "react-bootstrap"
 import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../contexts/UserIdContext"
 import { getProfileById } from "../../services/userService"
+import "./CreateDoc.css"
 
 export const CreateDoc = () => {
     const { userId } = useContext(UserContext)
@@ -55,12 +56,8 @@ export const CreateDoc = () => {
     }
 
     return (
-        <Form>
+        <Form className="doc-container">
             <fieldset>
-                {/* 
-                body 
-                */}
-
                 <Dropdown>
                     <Dropdown.Toggle id="dropdown-basic">
                         {departmentPH}
