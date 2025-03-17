@@ -4,6 +4,7 @@ import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../contexts/UserIdContext"
 import { getProfileById } from "../../services/userService"
 import "./CreateDoc.css"
+import { createDocument } from "../../services/createDoc"
 
 export const CreateDoc = () => {
     const { userId } = useContext(UserContext)
@@ -51,12 +52,20 @@ export const CreateDoc = () => {
         setDocument(copy)
     }
 
-    const handleCreate = () => {
-        
+    const handleCreate = (e) => {
+        e.preventDefault()
+        if (document.departmentId > 0) {
+            createDocument(document).then(
+                //get documentId
+                //navigate to document details of current document
+            )
+        } else {
+            alert("Please select a Department")
+        }
     }
 
     return (
-        <div className="doc-container">
+        <form className="doc-container" onSubmit={handleCreate}>
             <div className="document-info">
                 <Dropdown className="departments-dropdown">
                     <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle">
@@ -83,8 +92,8 @@ export const CreateDoc = () => {
                 </div>
                 <h2>By {profileInfo.fullName}</h2>
                 <textarea className="text-body" placeholder="Body" id="body" onChange={handleInputChange}></textarea>
-                <Button onClick={handleCreate} className="btn btn-success">Create Document</Button>
+                <Button className="btn btn-success" type="submit">Create Document</Button>
             </div>
-        </div>
+        </form>
     )
 }

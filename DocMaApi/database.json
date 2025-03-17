@@ -59,6 +59,14 @@
       "userId": 1,
       "body": "Example Document Body",
       "createdDate": 1741967778
+    },
+    {
+      "departmentId": 1,
+      "title": "CSS Harassing You?",
+      "userId": 1,
+      "body": "Me too!",
+      "createdDate": 1742247085,
+      "id": 2
     }
   ],
   "userDocFavorites": []
