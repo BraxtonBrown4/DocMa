@@ -4,7 +4,7 @@ import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../contexts/UserIdContext"
 import { getProfileById } from "../../services/userService"
 import "./CreateDoc.css"
-import { createDocument } from "../../services/createDoc"
+import { createDocument } from "../../services/createDocService"
 
 export const CreateDoc = () => {
     const { userId } = useContext(UserContext)
