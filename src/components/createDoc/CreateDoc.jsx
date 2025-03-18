@@ -3,14 +3,16 @@ import { Dropdown, Button } from "react-bootstrap"
 import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../customReact/contexts/UserIdContext"
 import { getProfileById } from "../../services/userService"
-import { createDocument } from "../../services/createDocService"
+import { createDocument } from "../../services/docsService"
 import "./CreateDoc.css"
+import { useNavigate } from "react-router-dom"
 
 export const CreateDoc = () => {
     const { userId } = useContext(UserContext)
     const [profileInfo, setProfileInfo] = useState({})
     const [allDepartments, setAllDepartments] = useState([])
     const [departmentPH, setDepartmentPH] = useState('Departments')
+    const navigate = useNavigate()
     const [document, setDocument] = useState({
         departmentId: 0,
         title: "",
@@ -55,10 +57,9 @@ export const CreateDoc = () => {
     const handleCreate = (e) => {
         e.preventDefault()
         if (document.departmentId > 0) {
-            createDocument(document).then(
-                //get documentId
-                //navigate to document details of current document
-            )
+            createDocument(document).then((res) => {
+                navigate(`/doc-details/${res.id}`)
+            })
         } else {
             alert("Please select a Department")
         }
