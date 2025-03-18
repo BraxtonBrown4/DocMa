@@ -1,5 +1,9 @@
+import "./Doc.css"
+
 export const Doc = ({docInfo}) => {
     return (
-        <div>Doc.jsx</div>
+        <div className="doc-info">
+
+        </div>
     )
 }

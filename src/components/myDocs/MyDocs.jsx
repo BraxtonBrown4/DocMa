@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import { getDocsByUserId } from "../../services/myDocsService"
 import { UserContext } from "../../contexts/UserIdContext"
-import "./MyDocs.css"
 import { Doc } from "../Doc/Doc"
+import "./MyDocs.css"
 
 export const MyDocs = () => {
     const [myDocs, setMyDocs] = useState([])

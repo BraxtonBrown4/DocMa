@@ -1,0 +1,7 @@
+.doc-info {
+    border: 2px solid black;
+    height: 75vh;
+    width: clamp(300px, 30%, 30%);
+    background-color: lightgray;
+    margin: 7vh auto;
+}
