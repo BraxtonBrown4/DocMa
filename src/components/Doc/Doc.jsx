@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
-import { UserContext } from "../../contexts/UserIdContext"
+import { UserContext } from "../../customReact/contexts/UserIdContext"
 import { Dropdown } from "react-bootstrap"
-import { useFavoriteIcons } from "../favoriteIcons/useFavoriteIcons"
+import { useFavoriteIcons } from "../../customReact/hooks/favoriteIcons/useFavoriteIcons"
 import "./Doc.css"
 
 export const Doc = ({ docInfo, setDeleteId }) => {

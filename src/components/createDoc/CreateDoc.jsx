@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react"
 import { Dropdown, Button } from "react-bootstrap"
 import { getAllDepartments } from "../../services/departmentService"
-import { UserContext } from "../../contexts/UserIdContext"
+import { UserContext } from "../../customReact/contexts/UserIdContext"
 import { getProfileById } from "../../services/userService"
-import "./CreateDoc.css"
 import { createDocument } from "../../services/createDocService"
+import "./CreateDoc.css"
 
 export const CreateDoc = () => {
     const { userId } = useContext(UserContext)

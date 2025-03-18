@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { favoriteByIds, isFavorite, unfavoriteById } from "../../services/favoritesServices"
+import { favoriteByIds, isFavorite, unfavoriteById } from "../../../services/favoritesServices"
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./FavoriteIcon.css"
 
