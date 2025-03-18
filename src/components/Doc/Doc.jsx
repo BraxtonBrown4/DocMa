@@ -29,7 +29,7 @@ export const Doc = ({ docInfo, setDeleteId }) => {
 
                         <Dropdown.Menu>
                             <Dropdown.Item as={Link} to={`/edit-doc/${docInfo.id}`}>Edit</Dropdown.Item>
-                            <Dropdown.Item onClick={()=>{setDeleteId(docInfo.id)}} >Delete</Dropdown.Item>
+                            <Dropdown.Item onClick={() => { setDeleteId(docInfo.id) }} >Delete</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 }
@@ -43,7 +43,9 @@ export const Doc = ({ docInfo, setDeleteId }) => {
                         <Link className="author" to={`/profile/${docInfo.userId}`}>{docInfo.user.fullName}</Link>
                 }
             </div>
-            <Link to={`/doc-details/${docInfo.id}`} >{bodyPreview}</Link>
+            <div className="body-div">
+                <Link className="body" to={`/doc-details/${docInfo.id}`} >{bodyPreview}</Link>
+            </div>
         </div>
     )
 }

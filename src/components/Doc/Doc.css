@@ -2,7 +2,6 @@
     border: 2px solid black;
     height: clamp(515px, 37.5vh, 80vh);
     width: clamp(300px, 15%, 30%);
-    background-color: lightgray;
     margin: 7vh 7%;
     display: flex;
     flex-direction: column;
@@ -71,4 +70,17 @@
     .author {
         font-size: clamp(15px, 25px, 25px);
     }
+}
+
+.body-div {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e7e7;
+}
+
+.body {
+    text-align: center;
 }
