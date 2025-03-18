@@ -1,6 +1,6 @@
 .doc-info {
     border: 2px solid black;
-    height: 37.5vh;
+    height: clamp(515px, 37.5vh, 80vh);
     width: clamp(300px, 15%, 30%);
     background-color: lightgray;
     margin: 7vh 7%;
