@@ -7,7 +7,7 @@
     border-radius: 100%;
     height: clamp(35px, 45px, 75px);
     width: clamp(35px, 45px, 75px);
-    transition: 0.5s;
+    transition: 0.25s;
     margin: 1%;
 }
 
@@ -19,11 +19,6 @@
     color: yellow;
 }
 
-.favorite:hover {
+.favorite:hover, .not-favorite:hover  {
     background-color: #9f9f9f;
-    color: white;
-}
-.not-favorite:hover {
-    background-color: #9f9f9f;
-    color: yellow;
 }
