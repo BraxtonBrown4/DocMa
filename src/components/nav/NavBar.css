@@ -6,6 +6,10 @@
     width: 100%;
     background-color: #343a40;
     justify-content: space-around;
+
+    .dropdown-toggle::after {
+        display: none !important; 
+      }
 }
 
 .nav-btn {

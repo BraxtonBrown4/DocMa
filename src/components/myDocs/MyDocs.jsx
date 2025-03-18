@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { getDocsByUserId } from "../../services/myDocsService"
+import { getDocsByUserId } from "../../services/docsService"
 import { UserContext } from "../../contexts/UserIdContext"
 import { Doc } from "../Doc/Doc"
 import "./MyDocs.css"
