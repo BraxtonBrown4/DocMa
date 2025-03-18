@@ -111,9 +111,14 @@
   ],
   "userDocFavorites": [
     {
-      "id": 1,
       "userId": 1,
-      "documentId": 1
+      "documentId": 2,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "documentId": 1,
+      "id": 3
     }
   ]
 }

@@ -19,7 +19,11 @@
     color: yellow;
 }
 
-.favorite:hover,
+.favorite:hover {
+    background-color: #9f9f9f;
+    color: white;
+}
 .not-favorite:hover {
     background-color: #9f9f9f;
+    color: yellow;
 }

@@ -6,6 +6,7 @@ import "./MyDocs.css"
 
 export const MyDocs = () => {
     const [myDocs, setMyDocs] = useState([])
+    const [updateSignal, setUpdateSignal] = useState(true)
     const {userId} = useContext(UserContext)
 
     useEffect(() => {
@@ -14,12 +15,12 @@ export const MyDocs = () => {
                 setMyDocs(res)
             })
         }
-    }, [userId])
+    }, [userId, updateSignal])
 
     return (
         <div className="myDocs-container">
             {myDocs.map(docInfo => {
-                return <Doc key={docInfo.id} docInfo={docInfo}/>
+                return <Doc key={docInfo.id} docInfo={docInfo} setUpdateSignal={setUpdateSignal} updateSignal={updateSignal}/>
             })}
         </div>
     )

@@ -4,8 +4,9 @@ import { UserContext } from "../../contexts/UserIdContext"
 import { Dropdown } from "react-bootstrap"
 import { HandleFavorite } from "../favoriteIcons/HandleFavorite"
 import "./Doc.css"
+import { deleteDocById } from "../../services/docsService"
 
-export const Doc = ({ docInfo }) => {
+export const Doc = ({ docInfo, setUpdateSignal, updateSignal }) => {
     const [bodyPreview, setBodyPreview] = useState("")
     const { userId } = useContext(UserContext)
     const [icon, setUserId, setDocId] = HandleFavorite()
@@ -13,14 +14,17 @@ export const Doc = ({ docInfo }) => {
     useEffect(() => {
         const preview = docInfo.body.slice(0, 75) + "..."
         setBodyPreview(preview)
-    }, [docInfo])
-
-    useEffect(()=>{
+        
         if (userId > 0 && docInfo !== undefined) {
             setUserId(userId)
             setDocId(docInfo.id)
+            
         }
-    }, [userId, docInfo])
+    }, [docInfo, userId])
+
+    useEffect(() => {
+        setUpdateSignal(!updateSignal)
+    }, [icon])
 
     return (
         <div className="doc-info">
@@ -36,17 +40,21 @@ export const Doc = ({ docInfo }) => {
 
                         <Dropdown.Menu>
                             <Dropdown.Item as={Link} to={`/edit-doc/${docInfo.id}`}>Edit</Dropdown.Item>
-                            <Dropdown.Item >Delete</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{deleteDocById(docInfo.id), setUpdateSignal(!updateSignal)}} >Delete</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 }
             </div>
-            <h1>{docInfo.title}</h1>
-            {
-            userId === docInfo?.userId ?<h2>{docInfo.user.fullName}</h2> :
-            <Link to={`/profile/${docInfo.userId}`}>{docInfo.user.fullName}</Link>
-            }
-            <h3>{bodyPreview}</h3>
+            <div className="title-div">
+                <h1 className="title">{docInfo.title}</h1>
+            </div>
+            <div className="author-div">
+                {
+                    userId === docInfo?.userId ? <h2 className="author">{docInfo.user.fullName}</h2> :
+                        <Link className="author" to={`/profile/${docInfo.userId}`}>{docInfo.user.fullName}</Link>
+                }
+            </div>
+            <Link to={`/doc-details/${docInfo.id}`} >{bodyPreview}</Link>
         </div>
     )
 }
