@@ -49,7 +49,16 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5
+    },
+    {
+      "id": 2,
+      "fullName": "Randal Vandle",
+      "email": "randal.vandle@email.com",
+      "employmentDate": 1741967778,
+      "title": "Production Technologies Assistant",
+      "departmentId": 5
     }
+    
   ],
   "documents": [
     {
@@ -96,10 +105,16 @@
       "id": 6,
       "departmentId": 1,
       "title": "Conquering CSS Challenges",
-      "userId": 1,
+      "userId": 2,
       "body": "CSS issues can often feel overwhelming, especially when layouts don't behave as expected. One way to simplify styling is by following a mobile-first approach. Writing clean and modular CSS using reusable classes makes maintenance easier. Variables and custom properties in CSS help in managing colors and fonts efficiently. Debugging tools in browsers can assist in quickly identifying the source of issues. It’s also helpful to break down complex styles into smaller, testable components. Understanding how the box model works can solve many spacing and alignment problems. By continuously learning new techniques, CSS can become less frustrating and more enjoyable.",
       "createdDate": 1742247085
     }
   ],
-  "userDocFavorites": []
+  "userDocFavorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "documentId": 1
+    }
+  ]
 }
