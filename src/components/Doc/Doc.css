@@ -8,3 +8,12 @@
     flex-direction: column;
     align-items: center;
 }
+
+.department-div {
+    width: 100%;
+    display: flex;
+
+    h2 {
+        margin: 0 auto;
+    }
+}
