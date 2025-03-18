@@ -14,6 +14,7 @@ export const ApplicationViews = () => {
                 {/* <Route path="/all-docs" element={<AllDocs />}></Route> */}
                 <Route path="/create-doc" element={<CreateDoc />}></Route>
                 <Route path="/profile/:profileId" element={<Profile />}></Route>
+                {/* <Route path="/edit-doc/:docId" element={<EditDoc />}></Route> */}
             </Route>
         </Routes>
     )

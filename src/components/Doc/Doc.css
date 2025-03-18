@@ -1,0 +1,86 @@
+.doc-info {
+    border: 2px solid black;
+    height: clamp(515px, 37.5vh, 80vh);
+    width: clamp(300px, 15%, 30%);
+    margin: 7vh 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.department-div {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: white;
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-grow: 1;
+        font-size: 20px;
+        border-right: 1px solid black;
+    }
+
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    .dropdown {
+        height: 100%;
+    }
+}
+
+.ellipses-btn {
+    border-radius: unset;
+    height: 100%;
+}
+
+.title-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+}
+
+.title {
+    font-size: clamp(15px, 25px, 25px);
+    font-weight: bold;
+    text-align: center;
+}
+
+.author-div {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: white;
+
+    .author {
+        font-size: clamp(15px, 25px, 25px);
+    }
+}
+
+.body-div {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e7e7;
+}
+
+.body {
+    text-align: center;
+}

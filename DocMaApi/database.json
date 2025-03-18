@@ -49,6 +49,14 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5
+    },
+    {
+      "id": 2,
+      "fullName": "Randal Vandle",
+      "email": "randal.vandle@email.com",
+      "employmentDate": 1741967778,
+      "title": "Production Technologies Assistant",
+      "departmentId": 5
     }
   ],
   "documents": [
@@ -67,7 +75,55 @@
       "body": "Me too!",
       "createdDate": 1742247085,
       "id": 2
+    },
+    {
+      "id": 3,
+      "departmentId": 5,
+      "title": "Mastering Documentation Writing",
+      "userId": 1,
+      "body": "Writing effective documentation is a crucial skill for any professional. A well-written document should be clear, concise, and structured logically. Always start with an outline to organize your thoughts before you begin. Use headings, bullet points, and short paragraphs to improve readability. Including examples and step-by-step instructions can make concepts easier to understand. Avoid jargon unless necessary, and define any technical terms. Proofreading is essential to catch errors and improve clarity. Finally, getting feedback from peers can help refine your document before publishing.",
+      "createdDate": 1741967778
+    },
+    {
+      "id": 4,
+      "departmentId": 1,
+      "title": "CSS: Friend or Foe?",
+      "userId": 1,
+      "body": "CSS can be both a powerful tool and a frustrating challenge for developers. It allows for amazing design flexibility, but it can also cause unexpected behavior. One common issue is specificity conflicts, where multiple styles override each other. Another challenge is dealing with browser inconsistencies, as different browsers interpret styles slightly differently. Using a CSS reset can help create a more consistent baseline. Flexbox and Grid are modern layout techniques that simplify positioning elements. Debugging CSS often requires using browser developer tools to inspect and adjust styles. Ultimately, mastering CSS takes patience, practice, and a solid understanding of how styles are applied.",
+      "createdDate": 1742247085
+    },
+    {
+      "id": 5,
+      "departmentId": 5,
+      "title": "Creating Impactful Technical Documents",
+      "userId": 1,
+      "body": "A technical document should serve as a reliable resource for its audience. Start by identifying the purpose of the document and the target readers. Keeping the language simple and direct ensures better comprehension. Visual elements such as diagrams, tables, and code snippets can enhance clarity. Structuring the document with a clear introduction, body, and conclusion improves its flow. Regular updates are necessary to keep the content relevant over time. Collaboration with team members can improve the document’s quality through different perspectives. Lastly, always provide references and links to additional resources for deeper learning.",
+      "createdDate": 1741967778
+    },
+    {
+      "id": 6,
+      "departmentId": 1,
+      "title": "Conquering CSS Challenges",
+      "userId": 2,
+      "body": "CSS issues can often feel overwhelming, especially when layouts don't behave as expected. One way to simplify styling is by following a mobile-first approach. Writing clean and modular CSS using reusable classes makes maintenance easier. Variables and custom properties in CSS help in managing colors and fonts efficiently. Debugging tools in browsers can assist in quickly identifying the source of issues. It’s also helpful to break down complex styles into smaller, testable components. Understanding how the box model works can solve many spacing and alignment problems. By continuously learning new techniques, CSS can become less frustrating and more enjoyable.",
+      "createdDate": 1742247085
     }
   ],
-  "userDocFavorites": []
+  "userDocFavorites": [
+    {
+      "userId": 1,
+      "documentId": 2,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "documentId": 2,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "documentId": 1,
+      "id": 7
+    }
+  ]
 }
