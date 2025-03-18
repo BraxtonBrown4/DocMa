@@ -3,10 +3,9 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../contexts/UserIdContext"
 import { Dropdown } from "react-bootstrap"
 import { useFavoriteIcons } from "../favoriteIcons/useFavoriteIcons"
-import { deleteDocById } from "../../services/docsService"
 import "./Doc.css"
 
-export const Doc = ({ docInfo, setUpdateSignal, updateSignal }) => {
+export const Doc = ({ docInfo, setDeleteId }) => {
     const [bodyPreview, setBodyPreview] = useState("")
     const { userId } = useContext(UserContext)
     const icon = useFavoriteIcons(userId, docInfo.id)
@@ -30,7 +29,7 @@ export const Doc = ({ docInfo, setUpdateSignal, updateSignal }) => {
 
                         <Dropdown.Menu>
                             <Dropdown.Item as={Link} to={`/edit-doc/${docInfo.id}`}>Edit</Dropdown.Item>
-                            <Dropdown.Item onClick={()=>{deleteDocById(docInfo.id).then(() => setUpdateSignal(!updateSignal))}} >Delete</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{setDeleteId(docInfo.id)}} >Delete</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 }
