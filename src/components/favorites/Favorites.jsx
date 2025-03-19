@@ -20,7 +20,7 @@ export const Favorites = () => {
     useEffect(() => {
         if (deleteId > 0) {
             deleteDocById(deleteId).then(() => {
-                getDocsByUserId(userId).then((res) => {
+                getFavoritesByUserId(userId).then((res) => {
                     setFavorites(res)
                 })
             })

@@ -69,14 +69,6 @@
       "createdDate": 1741967778
     },
     {
-      "departmentId": 1,
-      "title": "CSS Harassing You?",
-      "userId": 1,
-      "body": "Me too!",
-      "createdDate": 1742247085,
-      "id": 2
-    },
-    {
       "id": 3,
       "departmentId": 5,
       "title": "Mastering Documentation Writing",
@@ -114,11 +106,6 @@
       "userId": 1,
       "documentId": 1,
       "id": 1
-    },
-    {
-      "userId": 1,
-      "documentId": 2,
-      "id": 2
     }
   ]
 }
