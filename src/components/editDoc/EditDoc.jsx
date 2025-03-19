@@ -82,8 +82,7 @@ export const EditDoc = () => {
                     <span>Created On {new Date(document.createdDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
                     <span>Edited on {new Date(document.editedDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
                 </div>
-
-
+                <h2>By {docInfo?.user?.fullName}</h2>
                 <div>{docInfo.body}</div>
 
             </div>
