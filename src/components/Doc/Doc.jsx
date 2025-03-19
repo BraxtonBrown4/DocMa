@@ -8,7 +8,7 @@ import "./Doc.css"
 export const Doc = ({ docInfo, setDeleteId }) => {
     const [bodyPreview, setBodyPreview] = useState("")
     const { userId } = useContext(UserContext)
-    const icon = useFavoriteIcons(userId, docInfo.id)
+    const icon = useFavoriteIcons(docInfo.id)
 
     useEffect(() => {
         const preview = docInfo.body.slice(0, 75) + "..."

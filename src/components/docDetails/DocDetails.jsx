@@ -10,7 +10,7 @@ export const DocDetails = () => {
     const { userId } = useContext(UserContext)
     const { docId } = useParams()
     const [docInfo, setDocInfo] = useState({})
-    const icon = useFavoriteIcons(userId, parseInt(docId))
+    const icon = useFavoriteIcons(parseInt(docId))
 
     useEffect(() => {
         getDocById(docId).then((res) => {

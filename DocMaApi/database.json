@@ -109,36 +109,5 @@
       "createdDate": 1742247085
     }
   ],
-  "userDocFavorites": [
-    {
-      "userId": 1,
-      "documentId": 2,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "documentId": 2,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "documentId": 1,
-      "id": 7
-    },
-    {
-      "userId": 0,
-      "documentId": 3,
-      "id": 8
-    },
-    {
-      "userId": 0,
-      "documentId": 3,
-      "id": 9
-    },
-    {
-      "userId": 0,
-      "documentId": 3,
-      "id": 10
-    }
-  ]
+  "userDocFavorites": []
 }
