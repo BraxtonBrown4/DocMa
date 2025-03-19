@@ -25,3 +25,7 @@ export const createDocument = (document) => {
         body: JSON.stringify(document)
     }).then((res) => res.json())
 }
+
+export const getDocById = (id) => {
+    return fetch(`http://localhost:8088/documents/${id}?_expand=department&_expand=user`).then((res) => res.json())
+}

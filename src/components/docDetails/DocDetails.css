@@ -1,0 +1,97 @@
+.dd-container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dd-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    width: clamp(300px, 30vw, 100vw);
+    border: 2px solid black;
+}
+
+.dd-department-div {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: white;
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-grow: 1;
+        font-size: 20px;
+        border-right: 1px solid black;
+    }
+
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    .dropdown {
+        height: 100%;
+        width: clamp(33px, 10%, 50px)
+    }
+}
+
+.dd-ellipses-btn {
+    border-radius: unset;
+    height: 100%;
+    width: 100%;
+}
+
+.dd-title-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+
+    .title {
+        font-size: clamp(15px, 25px, 25px);
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+
+.dd-author-div {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: white;
+
+    .author {
+        font-size: clamp(15px, 25px, 25px);
+    }
+}
+
+.dd-body-div {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #e7e7e7;
+    
+    .body {
+        margin-top: 10%;
+        width: 80%;
+        text-align: center;
+    }
+}
