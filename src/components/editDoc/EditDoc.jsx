@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom"
 import { getDocById } from "../../services/docsService"
 import { getAllDepartments } from "../../services/departmentService"
 import "./EditDoc.css"
+import { Dropdown } from "react-bootstrap"
 
 export const EditDoc = () => {
     const { docId } = useParams()
     const [docInfo, setDocInfo] = useState({})
+    const [allDepartments, setAllDepartments] = useState([])
+    const [departmentPH, setDepartmentPH] = useState('')
     const [document, setDocument] = useState({
         id: 0,
         departmentId: 0,
@@ -23,20 +26,35 @@ export const EditDoc = () => {
         getDocById(docId).then((res) => {
             setDocInfo(res)
         })
+
+        getAllDepartments().then((res) => {
+            setAllDepartments(res)
+        })
     }, [docId])
 
     useEffect(() => {
+        if (docInfo.id > 0) {
+            const copy = { ...document }
+            copy.id = docInfo.id
+            copy.departmentId = docInfo.departmentId
+            copy.title = docInfo.title
+            copy.userId = docInfo.userId
+            copy.body = docInfo.body
+            copy.createdDate = docInfo.createdDate
+            copy.editedDate = Math.floor(Date.now() / 1000)
+    
+            setDocument(copy)
+            setDepartmentPH(docInfo?.department?.name)
+        }
+    }, [docInfo])
+
+    const handleDepartmentClick = (depId, depName) => {
         const copy = { ...document }
-        copy.id = docInfo.id
-        copy.departmentId = docInfo.departmentId
-        copy.title = docInfo.title
-        copy.userId = docInfo.userId
-        copy.body = docInfo.body
-        copy.createdDate = docInfo.createdDate
-        copy.editedDate = Math.floor(Date.now() / 1000)
+        copy.departmentId = depId
 
         setDocument(copy)
-    }, [docInfo])
+        setDepartmentPH(depName)
+    }
 
     const handleInputChange = (event) => {
         const copy = { ...document }
@@ -48,11 +66,24 @@ export const EditDoc = () => {
     return (
         <form className="edit-doc-container">
             <div className="document-info">
+                <Dropdown className="departments-dropdown">
+                    <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle">
+                        {departmentPH}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        {allDepartments.map(department => {
+                            return <Dropdown.Item key={department.id} onClick={() => { handleDepartmentClick(department.id, department.name) }}>{department.name}</Dropdown.Item>
+                        })}
+                    </Dropdown.Menu>
+                </Dropdown>
                 <div className="input-and-date">
                     <input type="text" value={document.title} id="title" onChange={handleInputChange} required />
                     <span>Created On {new Date(document.createdDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
                     <span>Edited on {new Date(document.editedDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
                 </div>
+
+
                 <div>{docInfo.body}</div>
 
             </div>
