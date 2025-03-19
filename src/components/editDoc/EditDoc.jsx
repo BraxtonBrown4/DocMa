@@ -83,7 +83,7 @@ export const EditDoc = () => {
                     <span>Edited on {new Date(document.editedDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
                 </div>
                 <h2>By {docInfo?.user?.fullName}</h2>
-                <div>{docInfo.body}</div>
+                <textarea className="text-body" value={document.body} id="body" onChange={handleInputChange}></textarea>
 
             </div>
         </form>
