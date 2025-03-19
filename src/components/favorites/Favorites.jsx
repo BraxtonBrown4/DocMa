@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { deleteDocById, getDocsByUserId } from "../../services/docsService"
+import { deleteDocById, getFavoritesByUserId,  } from "../../services/docsService"
 import { UserContext } from "../../customReact/contexts/UserIdContext"
 import { Doc } from "../Doc/Doc"
 import "./Favorites.css"
@@ -11,7 +11,7 @@ export const Favorites = () => {
 
     useEffect(() => {
         if (userId > 0) {
-            getDocsByUserId(userId).then((res) => {
+            getFavoritesByUserId(userId).then((res) => {
                 setFavorites(res)
             })
         }
