@@ -9,4 +9,11 @@
         font-size: 4vh;
         text-align: center;
     }
+
+    header {
+        margin-top: 7vh;
+        width: 100%;
+        text-align: center;
+        font-size: 8vh;
+    }
 }
