@@ -33,7 +33,7 @@ export const DocDetails = () => {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item as={Link} to={`/edit-doc/${docInfo.id}`}>Edit</Dropdown.Item>
-                                <Dropdown.Item onClick={() => {deleteDocById(docId).then(()=> {navigate('/my-docs')})}} >Delete</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {deleteDocById(docId).then(()=> {navigate(-1)})}} >Delete</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     }
