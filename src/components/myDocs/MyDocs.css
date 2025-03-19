@@ -5,11 +5,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
 
-    h1 {
-        font-size: 4vh;
-        text-align: center;
-    }
-
     header {
         margin-top: 7vh;
         width: 100%;
