@@ -6,6 +6,7 @@ import { MyDocs } from "../components/myDocs/MyDocs"
 import { DocDetails } from "../components/docDetails/DocDetails"
 import { EditDoc } from "../components/editDoc/editDoc"
 import { Favorites } from "../components/favorites/Favorites"
+import { AllDocs } from "../components/allDocs/AllDocs"
 
 export const ApplicationViews = () => {
 
@@ -14,7 +15,7 @@ export const ApplicationViews = () => {
             <Route path="/" element={<><NavBar /> <Outlet /></>}>
                 <Route path="/my-docs" element={<MyDocs />}></Route>
                 <Route path="/favorites" element={<Favorites />}></Route>
-                {/* <Route path="/all-docs" element={<AllDocs />}></Route> */}
+                <Route path="/all-docs" element={<AllDocs />}></Route>
                 <Route path="/create-doc" element={<CreateDoc />}></Route>
                 <Route path="/profile/:profileId" element={<Profile />}></Route>
                 <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
