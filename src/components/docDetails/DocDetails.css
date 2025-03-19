@@ -1,14 +1,21 @@
-.doc-info {
-    border: 2px solid black;
-    height: clamp(515px, 37.5vh, 80vh);
-    width: clamp(300px, 15%, 30%);
-    margin: 7vh 7%;
+.dd-container {
+    height: 90vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.department-div {
+.dd-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    width: clamp(300px, 30vw, 100vw);
+    border: 2px solid black;
+}
+
+.dd-department-div {
     height: 10%;
     width: 100%;
     display: flex;
@@ -34,15 +41,17 @@
 
     .dropdown {
         height: 100%;
+        width: clamp(33px, 10%, 50px)
     }
 }
 
-.ellipses-btn {
+.dd-ellipses-btn {
     border-radius: unset;
     height: 100%;
+    width: 100%;
 }
 
-.title-div {
+.dd-title-div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +68,7 @@
 }
 
 
-.author-div {
+.dd-author-div {
     height: 10%;
     width: 100%;
     display: flex;
@@ -73,15 +82,16 @@
     }
 }
 
-.body-div {
+.dd-body-div {
     flex-grow: 1;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #e7e7e7;
     
     .body {
+        margin-top: 10%;
+        width: 80%;
         text-align: center;
     }
 }

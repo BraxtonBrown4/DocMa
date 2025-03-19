@@ -15,3 +15,17 @@ export const deleteDocById = (docId) => {
     })
     .then(fetch(`http://localhost:8088/documents/${docId}`, { method: "DELETE" }))
 }
+
+export const createDocument = (document) => {
+    return fetch(`http://localhost:8088/Documents`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(document)
+    }).then((res) => res.json())
+}
+
+export const getDocById = (id) => {
+    return fetch(`http://localhost:8088/documents/${id}?_expand=department&_expand=user`).then((res) => res.json())
+}
