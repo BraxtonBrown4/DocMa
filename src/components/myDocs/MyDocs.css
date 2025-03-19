@@ -4,4 +4,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    h1 {
+        font-size: 4vh;
+        text-align: center;
+    }
 }

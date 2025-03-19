@@ -29,7 +29,7 @@ export const Favorites = () => {
 
     return (
         <div className="favorites-container">
-            {favorites.map(docInfo => {
+            {favorites.length === 0 ? <h1>Wow! you have no favorited documents, you should go find some to favorite!</h1> : favorites.map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
             })}
         </div>
