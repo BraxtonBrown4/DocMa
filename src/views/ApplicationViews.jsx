@@ -4,6 +4,7 @@ import { Profile } from "../components/profile/Profile"
 import { CreateDoc } from "../components/createDoc/CreateDoc"
 import { MyDocs } from "../components/myDocs/MyDocs"
 import { DocDetails } from "../components/docDetails/DocDetails"
+import { EditDoc } from "../components/editDoc/editDoc"
 
 export const ApplicationViews = () => {
 
@@ -16,7 +17,7 @@ export const ApplicationViews = () => {
                 <Route path="/create-doc" element={<CreateDoc />}></Route>
                 <Route path="/profile/:profileId" element={<Profile />}></Route>
                 <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
-                {/* <Route path="/edit-doc/:docId" element={<EditDoc />}></Route> */}
+                <Route path="/edit-doc/:docId" element={<EditDoc />}></Route>
             </Route>
         </Routes>
     )
