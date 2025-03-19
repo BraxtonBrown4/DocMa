@@ -29,3 +29,13 @@ export const createDocument = (document) => {
 export const getDocById = (id) => {
     return fetch(`http://localhost:8088/documents/${id}?_expand=department&_expand=user`).then((res) => res.json())
 }
+
+export const updateDocument = (document) => {
+    return fetch(`http://localhost:8088/Documents/${document.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(document)
+    }).then((res) => res.json())
+}

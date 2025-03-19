@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getDocById } from "../../services/docsService"
+import { getDocById, updateDocument } from "../../services/docsService"
 import { getAllDepartments } from "../../services/departmentService"
+import { Button, Dropdown } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
 import "./EditDoc.css"
-import { Dropdown } from "react-bootstrap"
 
 export const EditDoc = () => {
     const { docId } = useParams()
     const [docInfo, setDocInfo] = useState({})
     const [allDepartments, setAllDepartments] = useState([])
     const [departmentPH, setDepartmentPH] = useState('')
+    const navigate = useNavigate()
     const [document, setDocument] = useState({
         id: 0,
         departmentId: 0,
@@ -42,7 +44,7 @@ export const EditDoc = () => {
             copy.body = docInfo.body
             copy.createdDate = docInfo.createdDate
             copy.editedDate = Math.floor(Date.now() / 1000)
-    
+
             setDocument(copy)
             setDepartmentPH(docInfo?.department?.name)
         }
@@ -62,9 +64,16 @@ export const EditDoc = () => {
         setDocument(copy)
     }
 
+    const handleSave = (e) => {
+        e.preventDefault()
+
+        updateDocument(document).then((res) => {
+            navigate(`/doc-details/${res.id}`)
+        })
+    }
 
     return (
-        <form className="edit-doc-container">
+        <form className="edit-doc-container" onSubmit={handleSave}>
             <div className="document-info">
                 <Dropdown className="departments-dropdown">
                     <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle">
@@ -84,6 +93,10 @@ export const EditDoc = () => {
                 </div>
                 <h2>By {docInfo?.user?.fullName}</h2>
                 <textarea className="text-body" value={document.body} id="body" onChange={handleInputChange}></textarea>
+                <div className="btns-container">
+                    <Button className="btn btn-success" type="submit">Save Document</Button>
+                    <Button className="btn btn-danger" onClick={() => { navigate(-1) }}>Cancel</Button>
+                </div>
 
             </div>
         </form>
