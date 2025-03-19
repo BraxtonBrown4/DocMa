@@ -10,11 +10,9 @@ export const AllDocs = () => {
     const { userId } = useContext(UserContext)
 
     useEffect(() => {
-        if (userId > 0) {
             getAllDocs().then((res) => {
                 setAllDocs(res)
             })
-        }
     }, [userId])
 
     useEffect(() => {
