@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { deleteDocById, getDocById } from "../../services/docsService"
 import { UserContext } from "../../customReact/contexts/UserIdContext"
 import { Dropdown } from "react-bootstrap"
@@ -11,6 +11,7 @@ export const DocDetails = () => {
     const { docId } = useParams()
     const [docInfo, setDocInfo] = useState({})
     const icon = useFavoriteIcons(parseInt(docId))
+    const navigate = useNavigate()
 
     useEffect(() => {
         getDocById(docId).then((res) => {
@@ -32,7 +33,7 @@ export const DocDetails = () => {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item as={Link} to={`/edit-doc/${docInfo.id}`}>Edit</Dropdown.Item>
-                                <Dropdown.Item onClick={() => { }} >Delete</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {deleteDocById(docId).then(()=> {navigate('/my-docs')})}} >Delete</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     }
