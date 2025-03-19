@@ -10,12 +10,10 @@ export const AllDocs = () => {
     const { userId } = useContext(UserContext)
 
     useEffect(() => {
-        if (userId > 0) {
             getAllDocs().then((res) => {
                 setAllDocs(res)
             })
-        }
-    }, [userId])
+    }, [])
 
     useEffect(() => {
         if (deleteId > 0) {
@@ -29,6 +27,7 @@ export const AllDocs = () => {
 
     return (
         <div className="allDocs-container">
+            <header>All Docs</header>
             {allDocs.map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
             })}
