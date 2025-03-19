@@ -39,3 +39,15 @@ export const updateDocument = (document) => {
         body: JSON.stringify(document)
     }).then((res) => res.json())
 }
+
+export const getFavoritesByUserId = (id) => {
+    return fetch(`http://localhost:8088/userDocFavorites?userId=${id}`)
+    .then((res) => res.json())
+    .then((res) => {
+        const allFavorites = res.map((joinTable) => 
+            getDocById(joinTable.documentId)
+        )
+
+        return Promise.all(allFavorites)
+    })
+}
