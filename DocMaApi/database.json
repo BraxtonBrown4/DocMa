@@ -48,7 +48,8 @@
       "email": "email@email.com",
       "employmentDate": 1741967778,
       "title": "production technologies manager",
-      "departmentId": 5
+      "departmentId": 5,
+      "isDarkMode": true
     },
     {
       "id": 2,
