@@ -12,9 +12,11 @@ export const NavBar = () => {
     const navigate = useNavigate()
 
     useEffect(()=>{
-        getProfileById(userId).then((res) => {
+        if (userId > 0) {
+            getProfileById(userId).then((res) => {
             setIsDarkMode(res.isDarkMode)
         })
+        }
     }, [userId])
 
     const handleChange = () => {
