@@ -6,14 +6,14 @@ export const getDocsByUserId = (id) => {
 
 export const deleteDocById = (docId) => {
     return fetch(`http://localhost:8088/userDocFavorites?documentId=${docId}`)
-    .then((res)=> res.json())
-    .then((favorites) => {
-        const deletePromises = favorites.map(favorite => {
-            unfavoriteById(favorite.id)
+        .then((res) => res.json())
+        .then((favorites) => {
+            const deletePromises = favorites.map(favorite =>
+                unfavoriteById(favorite.id)
+            )
+            return Promise.all(deletePromises)
         })
-        return Promise.all(deletePromises)
-    })
-    .then(fetch(`http://localhost:8088/documents/${docId}`, { method: "DELETE" }))
+        .then(() => { return fetch(`http://localhost:8088/documents/${docId}`, { method: "DELETE" }) })
 }
 
 export const createDocument = (document) => {
@@ -42,14 +42,14 @@ export const updateDocument = (document) => {
 
 export const getFavoritesByUserId = (id) => {
     return fetch(`http://localhost:8088/userDocFavorites?userId=${id}`)
-    .then((res) => res.json())
-    .then((res) => {
-        const allFavorites = res.map((joinTable) => 
-            getDocById(joinTable.documentId)
-        )
+        .then((res) => res.json())
+        .then((res) => {
+            const allFavorites = res.map((joinTable) =>
+                getDocById(joinTable.documentId)
+            )
 
-        return Promise.all(allFavorites)
-    })
+            return Promise.all(allFavorites)
+        })
 }
 
 export const getAllDocs = () => {
