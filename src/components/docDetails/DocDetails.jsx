@@ -33,7 +33,15 @@ export const DocDetails = () => {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item as={Link} to={`/edit-doc/${docInfo.id}`}>Edit</Dropdown.Item>
-                                <Dropdown.Item onClick={() => {deleteDocById(docId).then(()=> {navigate(-1)})}} >Delete</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    deleteDocById(docId).then(() => {
+                                        if (window.location.pathname === `/doc-details/${docInfo.id}` || window.location.pathname === `/edit-doc/${docInfo.id}`) {
+                                            navigate('/my-docs')
+                                        } else {
+                                            navigate(-1)
+                                        }
+                                    })
+                                }} >Delete</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     }
