@@ -7,25 +7,33 @@ import { UserContext } from "../../contexts/UserIdContext";
 
 export const useFavoriteIcons = (docId) => {
     const { userId } = useContext(UserContext)
-    const [icon, setIcon] = useState("")
     const [favorite, setFavorite] = useState(false)
     const [joinTableId, setJoinTableId] = useState(0)
 
+    
     useEffect(() => {
         if (userId > 0 && docId > 0) {
             isFavorite(userId, docId).then((res) => {
+                if (res.length > 0) {
+                    setFavorite(true)
+                }
                 setJoinTableId(res[0]?.id)
             })
         }
     }, [userId, docId, favorite])
+    
+    const handleFavorite = () => {
 
-    useEffect(() => {
         if (joinTableId > 0) {
-            setIcon(<i className="bi bi-star-fill favorite" onClick={() => { unfavoriteById(joinTableId).then((res) => setFavorite(!favorite)) }}></i>)
+            unfavoriteById(joinTableId).then(() =>
+                setFavorite(!favorite)
+            )
         } else {
-            setIcon(<i className="bi bi-star-fill not-favorite" onClick={() => { favoriteByIds(userId, docId).then(() => setFavorite(!favorite)) }}></i>)
+            favoriteByIds(userId, docId).then(() => 
+                setFavorite(!favorite)
+        )
         }
-    }, [joinTableId])
-
-    return icon
+    }
+    
+    return <i className={`bi bi-star-fill ${favorite ? "favorite" : "not-favorite"}`} onClick={handleFavorite}></i>
 }
