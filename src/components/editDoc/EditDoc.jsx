@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getDocById, updateDocument } from "../../services/docsService"
 import { getAllDepartments } from "../../services/departmentService"
 import { Button, Dropdown } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import { UserContext } from "../../customReact/contexts/UserIdContext"
 import "./EditDoc.css"
 
 export const EditDoc = () => {
@@ -12,6 +13,7 @@ export const EditDoc = () => {
     const [allDepartments, setAllDepartments] = useState([])
     const [departmentPH, setDepartmentPH] = useState('')
     const navigate = useNavigate()
+    const { userId } = useContext(UserContext)
     const [document, setDocument] = useState({
         id: 0,
         departmentId: 0,
@@ -73,6 +75,7 @@ export const EditDoc = () => {
     }
 
     return (
+        userId === docInfo.userId ?
         <form className="edit-doc-container" onSubmit={handleSave}>
             <div className="document-info">
                 <Dropdown className="departments-dropdown">
@@ -99,7 +102,7 @@ export const EditDoc = () => {
                 </div>
 
             </div>
-        </form>
+        </form> : navigate('/my-docs')
     )
 }
 
