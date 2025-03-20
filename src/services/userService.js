@@ -21,7 +21,7 @@ export const getProfileById = (Id) => {
 }
 
 export const updateProfile = (updatedProfile) => {
-  return fetch(`http://localhost:8088/users/${updateProfile.id}`, {
+  return fetch(`http://localhost:8088/users/${updatedProfile.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
