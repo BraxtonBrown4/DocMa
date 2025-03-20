@@ -33,7 +33,7 @@ export const AllDocs = () => {
 
     return (
         <div className="allDocs-container">
-            <header>All Docs</header>
+            <header className="no-doc-msg">All Docs</header>
             <h1>{noDocMsg}</h1>
             {allDocs.map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
