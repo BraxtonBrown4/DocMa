@@ -11,4 +11,11 @@
         text-align: center;
         font-size: 8vh;
     }
+
+    .no-doc-msg {
+        margin-top: 7vh;
+        width: 100%;
+        text-align: center;
+        font-size: 5vh;
+    }
 }

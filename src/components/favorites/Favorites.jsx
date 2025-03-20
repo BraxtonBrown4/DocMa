@@ -8,11 +8,16 @@ export const Favorites = () => {
     const [favorites, setFavorites] = useState([])
     const [deleteId, setDeleteId] = useState(0)
     const { userId } = useContext(UserContext)
+    const [noDocMsg, setNoDocMsg] = useState('')
 
     useEffect(() => {
         if (userId > 0) {
             getFavoritesByUserId(userId).then((res) => {
-                setFavorites(res)
+                if (res.length > 0) {
+                    setFavorites(res)
+                } else {
+                    setNoDocMsg("You have no favorites. You should go find some documents and favorite them!")
+                }
             })
         }
     }, [userId])
@@ -30,6 +35,7 @@ export const Favorites = () => {
     return (
         <div className="favorites-container">
             <header>Favorites</header>
+            <h1 className="no-doc-msg">{noDocMsg}</h1>
             {favorites.map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
             })}
