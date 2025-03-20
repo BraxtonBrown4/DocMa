@@ -35,7 +35,7 @@ export const MyDocs = () => {
 
     return (
         <div className="myDocs-container">
-            <header>My Docs</header>
+            <header className="no-doc-msg">My Docs</header>
             <h1>{noDocMsg}</h1>
             {myDocs.map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
