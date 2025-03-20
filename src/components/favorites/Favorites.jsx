@@ -35,7 +35,7 @@ export const Favorites = () => {
     return (
         <div className="favorites-container">
             <header>Favorites</header>
-            <h1>{noDocMsg}</h1>
+            <h1 className="no-doc-msg">{noDocMsg}</h1>
             {favorites.map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
             })}
