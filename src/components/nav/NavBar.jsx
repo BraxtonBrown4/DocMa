@@ -7,8 +7,7 @@ import { UserContext } from "../../customReact/contexts/UserIdContext"
 import { getProfileById, updateProfile } from "../../services/userService"
 
 export const NavBar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true)
-    const { userId } = useContext(UserContext)
+    const { userId, lightMode, setLightMode } = useContext(UserContext)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -23,14 +22,6 @@ export const NavBar = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
         navigate("/", { replace: true })
     }
-
-    const handleChange = () => {
-        updateProfile({id: userId, isDarkMode: !isDarkMode,}).then(() => {
-            setIsDarkMode(!isDarkMode)
-        })
-    }
-
-    
 
     return (
         <div className="navBar">
@@ -54,7 +45,7 @@ export const NavBar = () => {
                     <Dropdown.Item as={Link} to={`/profile/${userId}`}>View Profile</Dropdown.Item>
                     <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
                     <Form>
-                        <Form.Check type="switch" label={isDarkMode ? "Dark Mode" : "Light Mode"} checked={isDarkMode} onChange={handleChange}></Form.Check>
+                        <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode} onChange={() => {setLightMode(!lightMode)}}></Form.Check>
                     </Form>
                 </Dropdown.Menu>
             </Dropdown>
