@@ -38,6 +38,9 @@ export const EditDoc = () => {
 
     useEffect(() => {
         if (docInfo.id > 0) {
+            if (userId !== docInfo.userId) {
+                navigate('/my-docs')
+            }
             const copy = { ...document }
             copy.id = docInfo.id
             copy.departmentId = docInfo.departmentId
@@ -75,7 +78,6 @@ export const EditDoc = () => {
     }
 
     return (
-        userId === docInfo.userId ?
         <form className="edit-doc-container" onSubmit={handleSave}>
             <div className="document-info">
                 <Dropdown className="departments-dropdown">
@@ -102,7 +104,7 @@ export const EditDoc = () => {
                 </div>
 
             </div>
-        </form> : navigate('/my-docs')
+        </form>
     )
 }
 
