@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { deleteDocById, getDocById } from "../../services/docsService"
-import { UserContext } from "../../customReact/contexts/UserIdContext"
+import { UserContext } from "../../customReact/contexts/UserContext"
 import { Dropdown } from "react-bootstrap"
 import { useFavoriteIcons } from "../../customReact/hooks/favoriteIcons/useFavoriteIcons"
 import "./DocDetails.css"

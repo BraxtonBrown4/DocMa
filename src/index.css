@@ -123,3 +123,35 @@ table {
   border-spacing: 0;
 }
 
+.light-mode {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+.dark-mode {
+  transition: 0.5s;
+  background-color: #475058;
+  color: white;
+  .doc-info {
+    a {
+          background-color: rgba(255, 255, 255, 0.65);
+          border-radius: 25px;
+          padding: 10px;
+          margin: 5px;
+      }
+  }
+
+  .profile-info {
+    background-color: #67727c;
+  }
+
+  .body-div {
+    background-color: lightgray;
+  }
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  color: inherit;
+}

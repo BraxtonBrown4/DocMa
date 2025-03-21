@@ -4,7 +4,7 @@ import { getDocById, updateDocument } from "../../services/docsService"
 import { getAllDepartments } from "../../services/departmentService"
 import { Button, Dropdown } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
-import { UserContext } from "../../customReact/contexts/UserIdContext"
+import { UserContext } from "../../customReact/contexts/UserContext"
 import "./EditDoc.css"
 
 export const EditDoc = () => {
