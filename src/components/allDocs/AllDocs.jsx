@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { deleteDocById, getAllDocs } from "../../services/docsService"
-import { UserContext } from "../../customReact/contexts/UserIdContext"
+import { UserContext } from "../../customReact/contexts/UserContext"
 import { Doc } from "../Doc/Doc"
 import "./AllDocs.css"
 
