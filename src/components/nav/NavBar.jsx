@@ -3,7 +3,7 @@ import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Dropdown, Form } from "react-bootstrap"
 import { useContext } from "react"
-import { UserContext } from "../../customReact/contexts/UserIdContext"
+import { UserContext } from "../../customReact/contexts/UserContext"
 
 export const NavBar = () => {
     const { userId, lightMode, setLightMode } = useContext(UserContext)

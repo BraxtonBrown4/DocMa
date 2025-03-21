@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { favoriteByIds, isFavorite, unfavoriteById } from "../../../services/favoritesServices"
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./FavoriteIcon.css"
-import { UserContext } from "../../contexts/UserIdContext";
+import { UserContext } from "../../contexts/UserContext";
 
 
 export const useFavoriteIcons = (docId) => {
