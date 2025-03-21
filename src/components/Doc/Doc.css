@@ -81,7 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(229, 243, 255, 0.4);
+    background-color: white;
     
     .body {
         text-align: center;
