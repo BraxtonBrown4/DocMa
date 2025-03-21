@@ -10,25 +10,27 @@ export const MyDocs = () => {
     const { userId } = useContext(UserContext)
     const [noDocMsg, setNoDocMsg] = useState('')
 
+    const handleRender = () => {
+        getDocsByUserId(userId).then((res) => {
+            if (res.length > 0) {
+                setMyDocs(res)
+            } else {
+                setMyDocs([])
+                setNoDocMsg("There are no created documents. You should go make some!")
+            }
+        })
+    }
 
     useEffect(() => {
         if (userId > 0) {
-            getDocsByUserId(userId).then((res) => {
-                if (res.length > 0) {
-                    setMyDocs(res)
-                } else {
-                    setNoDocMsg("There are no created documents. You should go make some!")
-                }
-            })
+            handleRender()
         }
     }, [userId])
 
     useEffect(() => {
         if (deleteId > 0) {
             deleteDocById(deleteId).then(() => {
-                getDocsByUserId(userId).then((res) => {
-                    setMyDocs(res)
-                })
+                handleRender()
             })
         }
     }, [userId, deleteId])
