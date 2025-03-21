@@ -133,8 +133,12 @@
       "id": 4
     }
   ],
-
   "userDocReads": [
-    
+    {
+      "id": 1,
+      "userId": 1,
+      "documentId": 1,
+      "readDate": 1741967778
+    }
   ]
 }
