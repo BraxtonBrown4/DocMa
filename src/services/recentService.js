@@ -18,7 +18,7 @@ const createRecent = (userId, docId) => {
         },
         body: JSON.stringify({
             userId: userId,
-            documentId: docId,
+            documentId: parseInt(docId),
             readDate: Math.floor(Date.now() / 1000)
         })
     }).then((res) => res.json())
@@ -33,16 +33,15 @@ export const handleRecent = (userId, docId) => {
         } else {
             createRecent(userId, docId).then(() => {
                 getAllRecentsByUserId(userId).then((recents) => {
-                    if (recents.length > 10) {
-                        const smallestTime = recentsobjects.reduce((lowest, current) => {
+                    if (recents.length > 9) {
+                        const smallestTime = recents.reduce((lowest, current) => {
                             return current.readDate < lowest.readDate ? current : lowest;
-                            
-                        })
+                        }, recents[0]);
 
-                        return Promise.all(smallestTime)
+                        if (smallestTime.id > 0) {
+                            deleteRecentByObjId(smallestTime.id)
+                        }
                     }
-                }).then((leastRecent) => {
-                    return deleteRecentByObjId(leastRecent.id)
                 })
             })
         }

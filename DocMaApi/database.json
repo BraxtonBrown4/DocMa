@@ -71,14 +71,6 @@
       "createdDate": 1741967778
     },
     {
-      "departmentId": 1,
-      "title": "CSS Harassing You?",
-      "userId": 1,
-      "body": "Me too!",
-      "createdDate": 1742247085,
-      "id": 2
-    },
-    {
       "id": 3,
       "departmentId": 5,
       "title": "Mastering Documentation Writing",
@@ -109,19 +101,89 @@
       "userId": 2,
       "body": "CSS issues can often feel overwhelming, especially when layouts don't behave as expected. One way to simplify styling is by following a mobile-first approach. Writing clean and modular CSS using reusable classes makes maintenance easier. Variables and custom properties in CSS help in managing colors and fonts efficiently. Debugging tools in browsers can assist in quickly identifying the source of issues. It’s also helpful to break down complex styles into smaller, testable components. Understanding how the box model works can solve many spacing and alignment problems. By continuously learning new techniques, CSS can become less frustrating and more enjoyable.",
       "createdDate": 1742247085
+    },
+    {
+      "id": 7,
+      "departmentId": 2,
+      "title": "JavaScript Performance Optimization",
+      "userId": 2,
+      "body": "Optimizing JavaScript performance is crucial for creating responsive web applications. One effective strategy is to minimize DOM manipulations by batching updates and using document fragments. Event delegation can significantly reduce memory usage by attaching fewer event listeners. Debouncing and throttling functions prevent excessive function calls during scrolling or resizing. Using web workers for computationally intensive tasks keeps the main thread free for user interactions. Memory leaks can be avoided by properly cleaning up event listeners and references. Modern JavaScript features like async/await make asynchronous code more readable and maintainable. Implementing code splitting and lazy loading reduces initial load times by only loading what's necessary. Regular profiling using browser developer tools helps identify bottlenecks in real-world scenarios.",
+      "createdDate": 1742320685
+    },
+    {
+      "id": 8,
+      "departmentId": 3,
+      "title": "Getting Started with React Hooks",
+      "userId": 2,
+      "body": "React Hooks have revolutionized how we write React components by enabling the use of state and other React features without writing classes. The useState hook provides a straightforward way to add state management to functional components, making them more powerful. useEffect allows handling side effects like data fetching and subscriptions, replacing lifecycle methods from class components. Custom hooks enable extracting and reusing stateful logic between components, promoting better code organization. The useContext hook simplifies working with React's context API, allowing components to consume context values without excessive prop drilling. useReducer provides a more structured approach to state management for complex state logic. useCallback and useMemo help optimize performance by memoizing functions and values. Learning these core hooks creates a solid foundation for modern React development practices.",
+      "createdDate": 1742407085
+    },
+    {
+      "id": 9,
+      "departmentId": 1,
+      "title": "Mastering Responsive Web Design",
+      "userId": 2,
+      "body": "Creating truly responsive websites requires more than just using media queries. A flexible foundation starts with a thoughtful approach to typography using relative units like rem and em. Fluid layouts with CSS Grid and Flexbox adapt gracefully to different viewport sizes without excessive breakpoints. Responsive images using srcset and sizes attributes ensure optimal loading times and visual quality across devices. Testing on actual devices reveals issues that may not be apparent in browser developer tools. Accessibility considerations should be integrated from the beginning, not added as an afterthought. Performance optimization becomes even more critical on mobile devices with limited bandwidth and processing power. Context-aware components that adapt their functionality based on available screen space provide better user experiences. As device diversity continues to increase, focusing on responsive principles rather than specific device dimensions ensures more future-proof designs.",
+      "createdDate": 1742493485
+    },
+    {
+      "id": 10,
+      "departmentId": 2,
+      "title": "TypeScript Best Practices",
+      "userId": 2,
+      "body": "Adopting TypeScript in your projects brings numerous benefits, but following best practices maximizes its value. Strict type checking should be enabled gradually in existing projects to avoid overwhelming refactoring efforts. Interface segregation principles encourage creating small, focused interfaces rather than large monolithic ones. Utility types like Partial, Omit, and Pick help create derived types without duplicating definitions. Generic types allow building reusable components and functions while maintaining type safety. Using union and intersection types creates precise models of your domain. The any type should be avoided whenever possible as it bypasses TypeScript's type checking. Advanced concepts like conditional types and mapped types enable powerful type transformations. Type guards help narrow types in runtime conditionals, bridging the gap between compile-time and runtime type information. Consistent naming conventions for interfaces, types, and generics improves code readability and maintainability.",
+      "createdDate": 1742579885
+    },
+    {
+      "id": 11,
+      "departmentId": 4,
+      "title": "Effective Git Workflow Strategies",
+      "userId": 2,
+      "body": "A well-defined Git workflow improves team collaboration and code quality. Feature branching isolates work in progress and reduces conflicts when multiple developers work simultaneously. Commit messages should be descriptive and follow conventions like conventional commits to automate versioning and changelog generation. Regular rebasing keeps feature branches up-to-date with the main branch, minimizing complex merge conflicts. Pull requests provide opportunities for code review and knowledge sharing before changes reach production. Git hooks automate quality checks, preventing commits that don't meet coding standards or break tests. Tagging releases creates clear reference points in your project's history. Interactive rebasing allows cleaning up commit history before merging, leading to a more logical progression of changes. Understanding Git's internal model of blobs, trees, and commits helps in resolving complex situations when they arise. Establishing clear team guidelines around branching, merging, and conflict resolution prevents confusion and maintains repository health.",
+      "createdDate": 1742666285
+    },
+    {
+      "id": 12,
+      "departmentId": 3,
+      "title": "Building Accessible Web Forms",
+      "userId": 2,
+      "body": "Creating accessible forms is essential for inclusive web experiences, yet they're often overlooked in development. Properly associated labels using the for attribute or wrapping inputs ensure screen readers announce fields correctly. Descriptive error messages should be programmatically associated with inputs using aria-describedby. Required fields need both visual indicators and aria-required attributes for non-visual users. Keyboard navigation must work logically, with a sensible tab order matching the visual layout. Form validation should provide feedback without relying solely on color or visual positioning. Focus management helps users understand where they are in the form completion process. Fieldsets and legends group related inputs semantically, particularly for radio buttons and checkboxes. Autocomplete attributes improve the experience for users with cognitive disabilities by reducing the need to remember information. Testing with actual assistive technologies reveals issues that automated accessibility checkers might miss. Building accessibility into forms from the start is more efficient than retrofitting it later.",
+      "createdDate": 1742752685
+    },
+    {
+      "id": 13,
+      "departmentId": 2,
+      "title": "Modern API Design Principles",
+      "userId": 2,
+      "body": "Well-designed APIs form the backbone of modern software architecture. RESTful principles provide a solid foundation, but pragmatic flexibility often serves real-world needs better than rigid adherence to theory. Clear, consistent naming conventions for endpoints improve developer experience and reduce documentation needs. Versioning strategies should be determined early, whether through URL paths, headers, or content negotiation. Rate limiting protects backend resources while ensuring fair access for all consumers. Comprehensive error responses with appropriate HTTP status codes and descriptive messages help clients handle exceptional situations. Authentication and authorization mechanisms need to balance security with ease of implementation. Pagination, filtering, and sorting options make working with large datasets manageable. HATEOAS (Hypertext as the Engine of Application State) links help clients discover available actions without hardcoding URL structures. Documentation using OpenAPI/Swagger specifications enables both human-readable docs and automated client generation. Considering both provider and consumer perspectives leads to APIs that are both powerful and pleasant to use.",
+      "createdDate": 1742839085
+    },
+    {
+      "id": 14,
+      "departmentId": 1,
+      "title": "Frontend Testing Strategies",
+      "userId": 2,
+      "body": "A comprehensive testing strategy for frontend applications combines several approaches for maximum confidence. Unit tests verify individual functions and components in isolation, providing quick feedback during development. Integration tests check how components work together, catching issues that might not appear when testing parts separately. End-to-end tests validate complete user flows from a user's perspective, though they run slower and are more brittle than other test types. Visual regression testing captures screenshots and compares them to detect unintended UI changes. Accessibility testing ensures that applications work with assistive technologies. Performance testing measures load times and interaction responsiveness. Mock services simulate backend APIs, enabling frontend testing without dependencies on actual servers. Testing in different browsers and devices catches compatibility issues early. The testing pyramid concept suggests having many unit tests, fewer integration tests, and even fewer E2E tests for an optimal balance of speed and coverage. Integrating tests into CI/CD pipelines ensures that problems are caught before they reach production.",
+      "createdDate": 1742925485
+    },
+    {
+      "id": 15,
+      "departmentId": 4,
+      "title": "Docker for Web Developers",
+      "userId": 2,
+      "body": "Docker has transformed development workflows by providing consistent environments across machines. Creating efficient Dockerfiles starts with selecting appropriate base images and minimizing layer count. Multi-stage builds separate build dependencies from runtime requirements, resulting in smaller final images. Docker Compose simplifies managing multi-container applications during development, defining services, networks, and volumes declaratively. Volumes persist data between container restarts and enable faster feedback cycles by mounting local code into containers. Health checks ensure services are ready before depending containers start. Docker networks isolate containers while allowing controlled communication between related services. Environment variables and secrets management handle configuration without hardcoding sensitive values. Debugging within containers requires specific techniques like port forwarding and attaching to running processes. Optimizing image size improves build times, deployment speed, and reduces security vulnerabilities. For web developers, Docker eliminates the \"it works on my machine\" problem and streamlines onboarding new team members.",
+      "createdDate": 1743011885
+    },
+    {
+      "id": 16,
+      "departmentId": 5,
+      "title": "State Management Patterns in Frontend Applications",
+      "userId": 2,
+      "body": "Effective state management is crucial for building maintainable frontend applications. The flux architecture, popularized by Redux, centralizes state in a store and updates it through unidirectional data flow. Context API with hooks provides a lighter alternative for sharing state without prop drilling in React applications. Server state management libraries like React Query and SWR separate server cache from UI state, handling loading states and stale data refreshing. Local component state should be used for UI-specific concerns that don't affect other parts of the application. State machines formalize possible states and transitions, reducing impossible states and making behavior more predictable. Immutable update patterns prevent accidental state mutations that lead to subtle bugs. Selectors compute derived state efficiently by memoizing results and only recalculating when dependencies change. Combining these approaches strategically based on specific requirements leads to more maintainable code than dogmatically using a single pattern throughout an application. The complexity of state management should match the complexity of the application, avoiding overengineering for simple cases.",
+      "createdDate": 1743098285
     }
   ],
   "userDocFavorites": [
-    {
-      "userId": 1,
-      "documentId": 1,
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "documentId": 2,
-      "id": 2
-    },
     {
       "userId": 1,
       "documentId": 6,
@@ -131,14 +193,25 @@
       "userId": 1,
       "documentId": 4,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "documentId": 3,
+      "id": 5
     }
   ],
   "userDocReads": [
     {
-      "id": 1,
       "userId": 1,
-      "documentId": 1,
-      "readDate": 1741967778
+      "documentId": 4,
+      "readDate": 1742585887,
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "documentId": 6,
+      "readDate": 1742585925,
+      "id": 24
     }
   ]
 }

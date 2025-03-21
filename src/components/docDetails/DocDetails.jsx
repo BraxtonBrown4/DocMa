@@ -5,6 +5,7 @@ import { UserContext } from "../../customReact/contexts/UserContext"
 import { Dropdown } from "react-bootstrap"
 import { useFavoriteIcons } from "../../customReact/hooks/favoriteIcons/useFavoriteIcons"
 import "./DocDetails.css"
+import { handleRecent } from "../../services/recentService"
 
 export const DocDetails = () => {
     const { userId } = useContext(UserContext)
@@ -14,9 +15,14 @@ export const DocDetails = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        getDocById(docId).then((res) => {
-            setDocInfo(res)
-        })
+        if (userId > 0 && docId > 0) {
+            getDocById(docId).then((res) => {
+                setDocInfo(res)
+            })
+
+            handleRecent(userId, docId)
+        }
+
     }, [docId, userId])
 
     return (
