@@ -7,6 +7,7 @@ import { DocDetails } from "../components/docDetails/DocDetails"
 import { EditDoc } from "../components/editDoc/editDoc"
 import { Favorites } from "../components/favorites/Favorites"
 import { AllDocs } from "../components/allDocs/AllDocs"
+import { RecentDocs } from "../components/recentDocs/RecentDocs"
 
 export const ApplicationViews = () => {
 
@@ -21,6 +22,7 @@ export const ApplicationViews = () => {
                 <Route path="/profile/:profileId" element={<Profile />}></Route>
                 <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
                 <Route path="/edit-doc/:docId" element={<EditDoc />}></Route>
+                <Route path="/recent-docs" element={<RecentDocs />}></Route>
             </Route>
         </Routes>
     )
