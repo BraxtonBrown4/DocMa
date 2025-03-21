@@ -32,17 +32,3 @@ export const UserProvider = ({ children }) => {
         </UserContext.Provider>
     )
 }
-
-/*
-.light-mode {
-    background-color: white;
-    color: black;
-    transition: 0.5s;
-}
-
-.dark-mode {
-    background-color: #475058;
-    color: white;
-    transition: 0.5s;
-}
-*/
