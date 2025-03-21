@@ -23,6 +23,7 @@ export const NavBar = () => {
                     <Dropdown.Item as={Link} to={`/my-docs`}>My Docs</Dropdown.Item>
                     <Dropdown.Item as={Link} to={`/all-docs`}>All Docs</Dropdown.Item>
                     <Dropdown.Item as={Link} to={`/favorites`}>Favorite Docs</Dropdown.Item>
+                    <Dropdown.Item as={Link} to={`/recent-docs`}>Recent Docs</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
 
