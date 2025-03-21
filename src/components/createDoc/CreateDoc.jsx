@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Dropdown, Button } from "react-bootstrap"
 import { getAllDepartments } from "../../services/departmentService"
 import { UserContext } from "../../customReact/contexts/UserContext"
-import { getProfileById } from "../../services/userService"
+import { getUserById } from "../../services/userService"
 import { createDocument } from "../../services/docsService"
 import "./CreateDoc.css"
 import { useNavigate } from "react-router-dom"
@@ -28,7 +28,7 @@ export const CreateDoc = () => {
                 setAllDepartments(res)
             })
 
-            getProfileById(userId).then((res) => {
+            getUserById(userId).then((res) => {
                 setProfileInfo(res)
             })
 

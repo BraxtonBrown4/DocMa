@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { getProfileById, updateProfile } from "../../services/userService";
+import { getUserById, updateUser } from "../../services/userService";
 
 export const UserContext = createContext(undefined)
 
@@ -12,14 +12,14 @@ export const UserProvider = ({ children }) => {
         const docMaUserObject = JSON.parse(localDocMaUser)
 
         setUserId(docMaUserObject.id)
-        getProfileById(docMaUserObject.id).then((res) => {
+        getUserById(docMaUserObject.id).then((res) => {
             setLightMode(res.isDarkMode)
         })
     }, [])
 
     useEffect(() => {
         if (userId > 0) {
-            updateProfile({ id: userId, isDarkMode: lightMode })
+            updateUser({ id: userId, isDarkMode: lightMode })
 
             const html = document.documentElement
             html.className = lightMode ? "dark-mode" : "light-mode"

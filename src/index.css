@@ -133,7 +133,7 @@ table {
   transition: 0.5s;
   background-color: #475058;
   color: white;
-  .doc-info {
+  .body-div {
     a {
           background-color: rgba(255, 255, 255, 0.65);
           border-radius: 25px;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getProfileById } from "../../services/userService"
+import { getUserById } from "../../services/userService"
 import "./Profile.css"
 
 export const Profile = () => {
@@ -10,7 +10,7 @@ export const Profile = () => {
     const [employmentDate, setEmploymentDate] = useState(0)
 
     useEffect(() => {
-        getProfileById(profileId).then((res) => {
+        getUserById(profileId).then((res) => {
             setProfileInfo(res)
         })
     }, [profileId])
