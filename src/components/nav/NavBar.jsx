@@ -2,21 +2,12 @@ import { useNavigate, Link, useRouteError } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Dropdown, Form } from "react-bootstrap"
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { UserContext } from "../../customReact/contexts/UserIdContext"
-import { getProfileById, updateProfile } from "../../services/userService"
 
 export const NavBar = () => {
     const { userId, lightMode, setLightMode } = useContext(UserContext)
     const navigate = useNavigate()
-
-    useEffect(() => {
-        if (userId > 0) {
-            getProfileById(userId).then((res) => {
-                setIsDarkMode(res.isDarkMode)
-            })
-        }
-    }, [userId])
 
     const handleLogout = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
