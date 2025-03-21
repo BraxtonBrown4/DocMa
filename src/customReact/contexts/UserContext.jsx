@@ -20,6 +20,9 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         if (userId > 0) {
             updateProfile({ id: userId, isDarkMode: lightMode })
+
+            const html = document.documentElement
+            html.className = lightMode ? "dark-mode" : "light-mode"
         }
     }, [lightMode])
 
@@ -29,3 +32,17 @@ export const UserProvider = ({ children }) => {
         </UserContext.Provider>
     )
 }
+
+/*
+.light-mode {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.dark-mode {
+    background-color: #475058;
+    color: white;
+    transition: 0.5s;
+}
+*/

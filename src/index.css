@@ -123,3 +123,19 @@ table {
   border-spacing: 0;
 }
 
+.light-mode {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+.dark-mode {
+  background-color: #475058;
+  color: white;
+  transition: 0.5s;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  color: inherit;
+}
