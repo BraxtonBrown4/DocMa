@@ -1,4 +1,5 @@
 import { unfavoriteById } from "./favoritesServices"
+import { deleteRecentById } from "./recentService"
 
 export const getDocsByUserId = (id) => {
     return fetch(`http://localhost:8088/documents?userId=${id}&_expand=department&_expand=user`).then((res) => res.json())
@@ -12,6 +13,16 @@ export const deleteDocById = (docId) => {
                 unfavoriteById(favorite.id)
             )
             return Promise.all(deletePromises)
+        })
+        .then(() => {
+            return fetch(`http://localhost:8088/userDocReads?documentId=${docId}`)
+            .then((res) => res.json())
+            .then((recents) => {
+                const deletePromises = recents.map(recent =>
+                    deleteRecentById(recent.id)
+                )
+                return Promise.all(deletePromises)
+            })
         })
         .then(() => { return fetch(`http://localhost:8088/documents/${docId}`, { method: "DELETE" }) })
 }

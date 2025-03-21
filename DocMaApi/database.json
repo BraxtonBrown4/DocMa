@@ -191,28 +191,11 @@
     },
     {
       "userId": 1,
-      "documentId": 4,
-      "id": 4
-    },
-    {
-      "userId": 1,
       "documentId": 3,
       "id": 5
     }
   ],
   "userDocReads": [
-    {
-      "userId": 1,
-      "documentId": 1,
-      "readDate": 1742586244,
-      "id": 27
-    },
-    {
-      "userId": 1,
-      "documentId": 4,
-      "readDate": 1742586246,
-      "id": 28
-    },
     {
       "userId": 1,
       "documentId": 5,
@@ -252,8 +235,20 @@
     {
       "userId": 1,
       "documentId": 16,
-      "readDate": 1742586288,
-      "id": 37
+      "readDate": 1742587234,
+      "id": 39
+    },
+    {
+      "userId": 1,
+      "documentId": 1,
+      "readDate": 1742587255,
+      "id": 40
+    },
+    {
+      "userId": 1,
+      "documentId": 4,
+      "readDate": 1742587276,
+      "id": 41
     }
   ]
 }

@@ -2,7 +2,7 @@ const isRecent = (userId, docId) => {
     return fetch(`http://localhost:8088/userDocReads?userId=${userId}&documentId=${docId}`).then((res) => res.json())
 }
 
-const deleteRecentByObjId = (id) => {
+export const deleteRecentById = (id) => {
     return fetch(`http://localhost:8088/userDocReads/${id}`, { method: "DELETE" }).then((res) => res.json())
 }
 
@@ -27,7 +27,7 @@ const createRecent = (userId, docId) => {
 export const handleRecent = (userId, docId) => {
     return isRecent(userId, docId).then((res) => {
         if (res.length > 0) {
-            deleteRecentByObjId(res[0].id).then(() => {
+            deleteRecentById(res[0].id).then(() => {
                 createRecent(userId, docId)
             })
         } else {
@@ -39,7 +39,7 @@ export const handleRecent = (userId, docId) => {
                         }, recents[0]);
 
                         if (smallestTime.id > 0) {
-                            deleteRecentByObjId(smallestTime.id)
+                            deleteRecentById(smallestTime.id)
                         }
                     }
                 })
