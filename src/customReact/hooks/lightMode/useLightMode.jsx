@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../contexts/UserContext"
 import { getUserById, updateUser } from "../../../services/userService"
-import "./useLightMode.css"
+import "./DarkMode.css"
+import "./LightMode.css"
 
 export const useLightMode = () => {
     const { userId } = useContext(UserContext)
-    const [lightMode, setLightMode] = useState(false)
+    const [lightMode, setLightMode] = useState(undefined)
 
     useEffect(() => {
         if (userId > 0) {

@@ -1,14 +1,8 @@
-
-.light-mode {
-    background-color: white;
-    color: black;
-    transition: 0.5s;
-  }
-  
-  .dark-mode {
+.dark-mode {
     transition: 0.5s;
     background-color: #475058;
     color: white;
+
     .body-div {
       a {
             background-color: rgba(255, 255, 255, 0.65);

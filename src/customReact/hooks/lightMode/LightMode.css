@@ -1,0 +1,13 @@
+
+.light-mode {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+
+    .department-div,
+    .title-div,
+    .author-div,
+    .ellipses-btn {
+      background-color: #f2f9ff;
+    }
+  }
