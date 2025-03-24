@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
 import { getUserById } from "../../services/userService"
+import { UserContext } from "../../customReact/contexts/UserContext"
 import "./Profile.css"
 
 export const Profile = () => {
+    const { userId } = useContext(UserContext)
     const { profileId } = useParams()
     const [profileInfo, setProfileInfo] = useState({})
     const [numDaysEmployed, setNumDaysEmployed] = useState(0)
@@ -48,6 +50,10 @@ export const Profile = () => {
                     <h2>Employed on {employmentDate}</h2>
                     <span>Employed {numDaysEmployed} days</span>
                 </div>
+                {
+                    userId == profileId &&
+                    <Link to="/edit-profile">Edit</Link>
+                }
             </div>
         </div>
     )
