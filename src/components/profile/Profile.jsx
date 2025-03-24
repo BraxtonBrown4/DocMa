@@ -44,8 +44,10 @@ export const Profile = () => {
                 <h2>Department: {profileInfo.department?.name}</h2>
                 <h2>Title: {profileInfo.title}</h2>
                 <h2>Documents created: {profileInfo.documents?.length}</h2>
-                <h2>Employed on {employmentDate}</h2>
-                <h2>Employed {numDaysEmployed} days</h2>
+                <div className="date-info">
+                    <h2>Employed on {employmentDate}</h2>
+                    <span>Employed {numDaysEmployed} days</span>
+                </div>
             </div>
         </div>
     )

@@ -6,6 +6,16 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.profile-info {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+    width: clamp(300px, 30vw, 100vw);
 
     h1 {
         font-size: clamp(40px, 175%, 400%);
@@ -20,14 +30,15 @@
     h2 {
         font-size: 20px;
     }
+
+    .date-info {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-size: 75%;
+            font-style: italic;
+        }
+    }
 }
 
-.profile-info {
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 75vh;
-    width: clamp(300px, 30vw, 100vw);
-}
