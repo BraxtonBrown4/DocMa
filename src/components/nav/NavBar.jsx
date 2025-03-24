@@ -1,12 +1,14 @@
-import { useNavigate, Link, useRouteError } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Dropdown, Form } from "react-bootstrap"
 import { useContext } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
+import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
 
 export const NavBar = () => {
-    const { userId, lightMode, setLightMode } = useContext(UserContext)
+    const [lightMode, setLightMode] = useLightMode()
+    const { userId } = useContext(UserContext)
     const navigate = useNavigate()
 
     const handleLogout = () => {

@@ -4,7 +4,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./FavoriteIcon.css"
 import { UserContext } from "../../contexts/UserContext";
 
-
 export const useFavoriteIcons = (docId) => {
     const { userId } = useContext(UserContext)
     const [favorite, setFavorite] = useState(false)

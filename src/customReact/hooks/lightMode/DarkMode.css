@@ -1,0 +1,107 @@
+.dark-mode {
+
+    /* inherit traits */
+    
+    color: #ffffff;
+
+    /* document overview css */
+
+    .department-div,
+    .title-div,
+    .author-div,
+    .ellipses-btn {
+        background-color: #8a959f;
+    }
+
+    .ellipses-btn {
+        border: #00000000;
+        color: #ffffff;
+    }
+
+    .ellipses-btn:hover {
+        background-color: #778189;
+    }
+
+    .body-div {
+        background-color: #898989;
+    }
+
+    .author-div,
+    .body-div {
+        a {
+            color: #ffffff;
+        }
+
+        a:hover {
+            transition: 0.25s;
+            color: #e5e5e5;
+        }
+    }
+
+    /* document details css */
+
+    .dd-department-div,
+    .dd-title-div,
+    .dd-author-div,
+    .dd-ellipses-btn {
+        background-color: #8a959f;
+    }
+
+    .dd-ellipses-btn {
+        border: #00000000;
+        color: #ffffff;
+    }
+
+    .dd-ellipses-btn:hover {
+        background-color: #778189;
+    }
+
+    .dd-body-div {
+        background-color: #898989;
+    }
+
+    .dd-author-div,
+    .dd-body-div {
+        a {
+            color: #ffffff;
+        }
+
+        a:hover {
+            transition: .25s;
+            color: #e5e5e5;
+        }
+    }
+
+    /* favorite icons css */
+
+    .favorite {
+        background-color: #475058;
+        color: #ffff00;
+    }
+
+    .favorite:hover {
+        background-color: #5b6670;
+    }
+
+    .not-favorite {
+        background-color: #5b6670;
+        color: #ffffff;
+    }
+
+    .not-favorite:hover {
+        background-color: #475058;
+    }
+
+    /* profile card background color */
+
+    .profile-info {
+        background-color: #898989;
+    }
+
+    /* webpage background color */
+
+    body {
+        background-color: #475058;
+        color: inherit;
+    }
+}

@@ -1,0 +1,107 @@
+.light-mode {
+
+  /* inherit traits */
+
+  color: #000000;
+
+  /* document overview css */
+
+  .department-div,
+  .title-div,
+  .author-div,
+  .ellipses-btn {
+    background-color: #f2f9ff;
+  }
+
+  .ellipses-btn {
+    border: #00000000;
+    color: black;
+  }
+
+  .ellipses-btn:hover {
+    background-color: #e0e5eb;
+  }
+
+  .body-div {
+    background-color: #e2e2e2;
+  }
+
+  .author-div,
+  .body-div {
+    a {
+      color: #0d6efd;
+    }
+
+    a:hover {
+      transition: .25s;
+      color: #0f5ed4;
+    }
+  }
+
+  /* document details css */
+
+  .dd-department-div,
+  .dd-title-div,
+  .dd-author-div,
+  .dd-ellipses-btn {
+    background-color: #f2f9ff;
+  }
+
+  .dd-ellipses-btn {
+    border: #00000000;
+    color: black;
+  }
+
+  .dd-ellipses-btn:hover {
+    background-color: #e0e5eb;
+  }
+
+  .dd-body-div {
+    background-color: #e2e2e2;
+  }
+
+  .dd-author-div,
+  .dd-body-div {
+    a {
+      color: #0d6efd;
+    }
+
+    a:hover {
+      transition: 0.25s;
+      color: #0f5ed4;
+    }
+  }
+
+  /* favorite icons css */
+
+  .favorite {
+    background-color: #9f9f9f;
+    color: #ffff00;
+  }
+
+  .favorite:hover {
+    background-color: #d3d3d3;
+  }
+
+  .not-favorite {
+    background-color: #d3d3d3;
+    color: #ffffff;
+  }
+
+  .not-favorite:hover {
+    background-color: #9f9f9f;
+  }
+
+  /* profile card background color */
+
+  .profile-info {
+    background-color: #e2e2e2;
+  }
+
+  /* webpage background color */
+
+  body {
+    background-color: #ffffff;
+    color: inherit;
+  }
+}
