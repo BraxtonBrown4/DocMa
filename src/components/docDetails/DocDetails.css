@@ -58,24 +58,26 @@
     border-bottom: 2px solid black;
     width: 100%;
     height: 15%;
-
-    .dd-dates {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-
-        span {
-            font-size: 75%;
-            font-style: italic;
-        }
-    }
-
+    
     .title {
         height: 90%;
         font-size: clamp(15px, 100vh, 25px);
         font-weight: bold;
         text-align: center;
+        display: flex;
+        align-items: center;
     }
+    
+        .dd-dates {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+    
+            span {
+                font-size: 75%;
+                font-style: italic;
+            }
+        }
 }
 
 
