@@ -3,7 +3,6 @@
   /* inherit traits */
 
   color: #000000;
-  transition: 0.5s;
 
   /* document overview css */
 
@@ -68,7 +67,7 @@
     }
 
     a:hover {
-      transition: .25s;
+      transition: 0.25s;
       color: #0f5ed4;
     }
   }
@@ -102,7 +101,7 @@
   /* webpage background color */
 
   body {
-    background-color: #00000000;
+    background-color: #ffffff;
     color: inherit;
   }
 }

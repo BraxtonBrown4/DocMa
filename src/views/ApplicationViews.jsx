@@ -8,10 +8,13 @@ import { EditDoc } from "../components/editDoc/editDoc"
 import { Favorites } from "../components/favorites/Favorites"
 import { AllDocs } from "../components/allDocs/AllDocs"
 import { RecentDocs } from "../components/recentDocs/RecentDocs"
+import { useLightMode } from "../customReact/hooks/lightMode/useLightMode"
 
 export const ApplicationViews = () => {
+    const [lightMode] = useLightMode()
 
     return (
+        lightMode !== undefined &&
         <Routes>
             <Route path="/" element={<><NavBar /> <Outlet /></>}>
                 <Route index element={<MyDocs />}></Route>

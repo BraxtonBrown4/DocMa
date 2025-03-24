@@ -1,8 +1,7 @@
 .dark-mode {
 
     /* inherit traits */
-
-    transition: 0.5s;
+    
     color: #ffffff;
 
     /* document overview css */
@@ -34,7 +33,7 @@
         }
 
         a:hover {
-            transition: .25s;
+            transition: 0.25s;
             color: #e5e5e5;
         }
     }

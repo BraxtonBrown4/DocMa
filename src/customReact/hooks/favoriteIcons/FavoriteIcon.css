@@ -6,6 +6,9 @@
     border-radius: 100%;
     height: clamp(35px, 45px, 75px);
     width: clamp(35px, 45px, 75px);
-    transition: 0.25s;
     margin: 1%;
+}
+
+.favorite:hover, .not-favorite:hover {
+    transition: 0.25s;
 }
