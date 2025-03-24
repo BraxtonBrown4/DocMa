@@ -52,7 +52,7 @@ export const Profile = () => {
                 </div>
                 {
                     userId == profileId &&
-                    <Link to="/edit-profile">Edit</Link>
+                    <Link to="/edit-profile" className="btn btn-lg btn-primary">Edit</Link>
                 }
             </div>
         </div>
