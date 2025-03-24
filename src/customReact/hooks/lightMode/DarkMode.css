@@ -1,7 +1,7 @@
 .dark-mode {
 
     /* inherit traits */
-    
+
     color: #ffffff;
 
     /* document overview css */
@@ -95,6 +95,12 @@
     /* profile card background color */
 
     .profile-info {
+        background-color: #898989;
+    }
+
+    /* edit profile card background color */
+
+    .edit-profile-form {
         background-color: #898989;
     }
 

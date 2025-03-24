@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getDocById, updateDocument } from "../../services/docsService"
 import { getAllDepartments } from "../../services/departmentService"
-import { Button, Dropdown } from "react-bootstrap"
+import { Dropdown } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import "./EditDoc.css"
@@ -99,8 +99,8 @@ export const EditDoc = () => {
                 <h2>By {docInfo?.user?.fullName}</h2>
                 <textarea className="text-body" value={document.body} id="body" onChange={handleInputChange}></textarea>
                 <div className="btns-container">
-                    <Button className="btn btn-success" type="submit">Save Document</Button>
-                    <Button className="btn btn-danger" onClick={() => { navigate(-1) }}>Cancel</Button>
+                    <button className="btn btn-success" type="submit">Save Document</button>
+                    <button className="btn btn-danger" onClick={() => { navigate(-1) }}>Cancel</button>
                 </div>
 
             </div>

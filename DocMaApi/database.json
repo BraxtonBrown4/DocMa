@@ -76,7 +76,8 @@
       "title": "Mastering Documentation Writing",
       "userId": 1,
       "body": "Writing effective documentation is a crucial skill for any professional. A well-written document should be clear, concise, and structured logically. Always start with an outline to organize your thoughts before you begin. Use headings, bullet points, and short paragraphs to improve readability. Including examples and step-by-step instructions can make concepts easier to understand. Avoid jargon unless necessary, and define any technical terms. Proofreading is essential to catch errors and improve clarity. Finally, getting feedback from peers can help refine your document before publishing.",
-      "createdDate": 1741967778
+      "createdDate": 1741967778,
+      "editedDate": 1742840405
     },
     {
       "id": 4,
@@ -250,15 +251,15 @@
     },
     {
       "userId": 1,
-      "documentId": 3,
-      "readDate": 1742832316,
-      "id": 42
-    },
-    {
-      "userId": 1,
       "documentId": 1,
       "readDate": 1742835658,
       "id": 43
+    },
+    {
+      "userId": 1,
+      "documentId": 3,
+      "readDate": 1742840409,
+      "id": 44
     }
   ]
 }
