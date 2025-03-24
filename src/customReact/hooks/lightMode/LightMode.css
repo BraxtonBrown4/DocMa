@@ -1,7 +1,7 @@
 
 .light-mode {
-    background-color: white;
-    color: black;
+    background-color: #ffffff;
+    color: #000000;
     transition: 0.5s;
 
     .department-div,
@@ -10,4 +10,34 @@
     .ellipses-btn {
       background-color: #f2f9ff;
     }
+
+    .ellipses-btn {
+      border: #00000000;
+      color: black;
+  }
+
+    .body-div {
+      background-color: #e2e2e2;
+    }
+
+    .author-div,
+    .body-div {
+        a {
+            color: #0d6efd;
+        }
+
+        a:hover {
+            transition: .25s;
+            color: #0f5ed4;
+        }
+    }
+
+    .ellipses-btn:hover {
+      background-color: #e0e5eb;
+    }
+
+    body {
+      background-color: #00000000;
+      color: inherit;
+  }
   }
