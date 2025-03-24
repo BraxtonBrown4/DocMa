@@ -1,0 +1,24 @@
+.edit-profile-container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.edit-profile-form {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+    width: clamp(300px, 30vw, 100vw);
+}
+
+.save-and-cancel {
+    display: flex;
+    flex-direction: row;
+}
