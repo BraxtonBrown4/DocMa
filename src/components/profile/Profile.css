@@ -25,6 +25,8 @@
         text-align: center;
         background-color: white;
         color: black;
+        min-width: 268px;
+        min-height: 60px;
     }
 
     h2 {
