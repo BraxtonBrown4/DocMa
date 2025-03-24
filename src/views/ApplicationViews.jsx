@@ -9,6 +9,7 @@ import { Favorites } from "../components/favorites/Favorites"
 import { AllDocs } from "../components/allDocs/AllDocs"
 import { RecentDocs } from "../components/recentDocs/RecentDocs"
 import { useLightMode } from "../customReact/hooks/lightMode/useLightMode"
+import { EditProfile } from "../components/editProfile/EditProfile"
 
 export const ApplicationViews = () => {
     const [lightMode] = useLightMode()
@@ -26,6 +27,7 @@ export const ApplicationViews = () => {
                 <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
                 <Route path="/edit-doc/:docId" element={<EditDoc />}></Route>
                 <Route path="/recent-docs" element={<RecentDocs />}></Route>
+                <Route path="/edit-profile" element={<EditProfile />}></Route>
             </Route>
         </Routes>
     )
