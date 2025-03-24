@@ -244,12 +244,6 @@
     },
     {
       "userId": 1,
-      "documentId": 1,
-      "readDate": 1742587255,
-      "id": 40
-    },
-    {
-      "userId": 1,
       "documentId": 4,
       "readDate": 1742587276,
       "id": 41
@@ -259,6 +253,12 @@
       "documentId": 3,
       "readDate": 1742832316,
       "id": 42
+    },
+    {
+      "userId": 1,
+      "documentId": 1,
+      "readDate": 1742835658,
+      "id": 43
     }
   ]
 }
