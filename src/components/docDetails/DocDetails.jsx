@@ -58,7 +58,10 @@ export const DocDetails = () => {
                     <h1 className="title">{docInfo.title}</h1>
                     <div className="dd-dates">
                         <span>Created On {new Date(docInfo.createdDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
-                        <span>Edited on {new Date(docInfo.editedDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
+                        {
+                            docInfo.editedDate > 0 &&
+                            <span>Edited on {new Date(docInfo.editedDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
+                        }
                     </div>
                 </div>
                 <div className="dd-author-div">
