@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
-import { getUserById } from "../../services/userService"
-import { useNavigate } from "react-router-dom"
+import { getUserById, updateUser } from "../../services/userService"
+import { Link, useNavigate } from "react-router-dom"
+import { Dropdown } from "react-bootstrap"
+import { getAllDepartments } from "../../services/departmentService"
 import "./EditProfile.css"
 
 export const EditProfile = () => {
@@ -9,6 +11,8 @@ export const EditProfile = () => {
     const [profileInfo, setProfileInfo] = useState({})
     const [numDaysEmployed, setNumDaysEmployed] = useState(0)
     const [employmentDate, setEmploymentDate] = useState(0)
+    const [allDepartments, setAllDepartments] = useState([])
+    const [departmentPH, setDepartmentPH] = useState('')
     const navigate = useNavigate()
     const [profile, setProfile] = useState({
         id: 0,
@@ -20,6 +24,10 @@ export const EditProfile = () => {
     useEffect(() => {
         getUserById(userId).then((res) => {
             setProfileInfo(res)
+        })
+
+        getAllDepartments().then((res) => {
+            setAllDepartments(res)
         })
     }, [userId])
 
@@ -47,6 +55,8 @@ export const EditProfile = () => {
                 title: profileInfo.title,
                 departmentId: profileInfo.departmentId
             })
+
+            setDepartmentPH(profileInfo.department.name)
         }
     }, [profileInfo])
 
@@ -56,23 +66,49 @@ export const EditProfile = () => {
         setProfile(copy)
     }
 
+    const handleDepartmentClick = (depId, depName) => {
+        const copy = { ...profile }
+        copy.departmentId = depId
+
+        setProfile(copy)
+        setDepartmentPH(depName)
+    }
+
+    const handleSave = (e) => {
+        e.preventDefault()
+        
+        updateUser(profile).then(() => {
+            navigate(`/profile/${userId}`)
+        })
+    }
+
     return (
         <div className="edit-profile-container">
-            <form className="edit-profile-form">
+            <form className="edit-profile-form" onSubmit={handleSave}>
                 <div className="input-group">
                     <div className="input-group-prepend">
                         <span className="input-group-text">Full Name</span>
                     </div>
-                    <input type="text" className="form-control" value={profile.fullName} id="fullName" onChange={handleInputChange} required/>
+                    <input type="text" className="form-control" value={profile.fullName} id="fullName" onChange={handleInputChange} required />
                 </div>
 
-                <h2>Department: {profileInfo.department?.name}</h2>
+                <Dropdown className="departments-dropdown">
+                    <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle">
+                        {departmentPH}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        {allDepartments.map(department => {
+                            return <Dropdown.Item key={department.id} onClick={() => { handleDepartmentClick(department.id, department.name) }}>{department.name}</Dropdown.Item>
+                        })}
+                    </Dropdown.Menu>
+                </Dropdown>
 
                 <div className="input-group">
                     <div className="input-group-prepend">
                         <span className="input-group-text">Title</span>
                     </div>
-                    <input type="text" className="form-control" value={profile.title} id="title" onChange={handleInputChange} required/>
+                    <input type="text" className="form-control" value={profile.title} id="title" onChange={handleInputChange} required />
                 </div>
 
                 <h2>Documents created: {profileInfo.documents?.length}</h2>
@@ -81,8 +117,8 @@ export const EditProfile = () => {
                     <span>Employed {numDaysEmployed} days</span>
                 </div>
                 <div className="save-and-cancel">
-                    <button className="btn btn-success" type="submit">Save</button>
-                    <button className="btn btn-danger" onClick={() => { navigate(`/profile/${userId}`) }}>Cancel</button>
+                    <button className="btn btn-success btn-size" type="submit">Save</button>
+                    <Link className="btn btn-danger btn-size" to={`/profile/${userId}`}>Cancel</Link>
                 </div>
             </form>
         </div>

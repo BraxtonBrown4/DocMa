@@ -40,6 +40,7 @@ export const Profile = () => {
 
 
     return (
+        profileInfo.id > 0 &&
         <div className="profile-container">
             <div className="profile-info">
                 <h1>{profileInfo.fullName}</h1>
