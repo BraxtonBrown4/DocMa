@@ -29,5 +29,4 @@
     align-items: center;
     height: 75vh;
     width: clamp(300px, 30vw, 100vw);
-    background-color: lightgray;
 }

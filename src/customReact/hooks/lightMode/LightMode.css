@@ -16,6 +16,10 @@
       color: black;
   }
 
+  .ellipses-btn:hover {
+    background-color: #e0e5eb;
+  }
+
     .body-div {
       background-color: #e2e2e2;
     }
@@ -32,9 +36,9 @@
         }
     }
 
-    .ellipses-btn:hover {
-      background-color: #e0e5eb;
-    }
+    .profile-info {
+      background-color: #e2e2e2;
+  }
 
     body {
       background-color: #00000000;
