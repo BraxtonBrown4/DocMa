@@ -49,7 +49,7 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5,
-      "isDarkMode": false
+      "isDarkMode": true
     },
     {
       "id": 2,
@@ -257,7 +257,7 @@
     {
       "userId": 1,
       "documentId": 3,
-      "readDate": 1742830663,
+      "readDate": 1742831559,
       "id": 42
     }
   ]

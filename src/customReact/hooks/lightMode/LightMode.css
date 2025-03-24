@@ -1,7 +1,11 @@
 .light-mode {
-  background-color: #ffffff;
+
+  /* inherit traits */
+  
   color: #000000;
   transition: 0.5s;
+
+  /* document overview css */
 
   .department-div,
   .title-div,
@@ -35,6 +39,8 @@
     }
   }
 
+  /* favorite icons css */
+
   .favorite {
     background-color: #9f9f9f;
     color: #ffff00;
@@ -53,9 +59,13 @@
     background-color: #9f9f9f;
   }
 
+  /* profile card background color */
+
   .profile-info {
     background-color: #e2e2e2;
   }
+
+  /* webpage background color */
 
   body {
     background-color: #00000000;
