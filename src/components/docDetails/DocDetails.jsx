@@ -13,6 +13,8 @@ export const DocDetails = () => {
     const [docInfo, setDocInfo] = useState({})
     const icon = useFavoriteIcons(parseInt(docId))
     const navigate = useNavigate()
+    const localeDateStringInfo = { year: 'numeric', month: 'long', day: 'numeric' }
+
 
     useEffect(() => {
         if (userId > 0 && docId > 0) {
@@ -54,6 +56,10 @@ export const DocDetails = () => {
                 </div>
                 <div className="dd-title-div">
                     <h1 className="title">{docInfo.title}</h1>
+                    <div className="dd-dates">
+                        <span>Created On {new Date(docInfo.createdDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
+                        <span>Edited on {new Date(docInfo.editedDate * 1000).toLocaleDateString('en-US', localeDateStringInfo)}</span>
+                    </div>
                 </div>
                 <div className="dd-author-div">
                     {
