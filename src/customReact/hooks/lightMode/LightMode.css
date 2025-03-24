@@ -1,47 +1,64 @@
-
 .light-mode {
-    background-color: #ffffff;
-    color: #000000;
-    transition: 0.5s;
+  background-color: #ffffff;
+  color: #000000;
+  transition: 0.5s;
 
-    .department-div,
-    .title-div,
-    .author-div,
-    .ellipses-btn {
-      background-color: #f2f9ff;
-    }
+  .department-div,
+  .title-div,
+  .author-div,
+  .ellipses-btn {
+    background-color: #f2f9ff;
+  }
 
-    .ellipses-btn {
-      border: #00000000;
-      color: black;
+  .ellipses-btn {
+    border: #00000000;
+    color: black;
   }
 
   .ellipses-btn:hover {
     background-color: #e0e5eb;
   }
 
-    .body-div {
-      background-color: #e2e2e2;
+  .body-div {
+    background-color: #e2e2e2;
+  }
+
+  .author-div,
+  .body-div {
+    a {
+      color: #0d6efd;
     }
 
-    .author-div,
-    .body-div {
-        a {
-            color: #0d6efd;
-        }
-
-        a:hover {
-            transition: .25s;
-            color: #0f5ed4;
-        }
+    a:hover {
+      transition: .25s;
+      color: #0f5ed4;
     }
-
-    .profile-info {
-      background-color: #e2e2e2;
   }
 
-    body {
-      background-color: #00000000;
-      color: inherit;
+  .favorite {
+    background-color: #9f9f9f;
+    color: #ffff00;
   }
+
+  .favorite:hover {
+    background-color: #d3d3d3;
   }
+
+  .not-favorite {
+    background-color: #d3d3d3;
+    color: #ffffff;
+  }
+
+  .not-favorite:hover {
+    background-color: #9f9f9f;
+  }
+
+  .profile-info {
+    background-color: #e2e2e2;
+  }
+
+  body {
+    background-color: #00000000;
+    color: inherit;
+  }
+}

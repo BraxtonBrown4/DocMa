@@ -35,6 +35,24 @@
         }
     }
 
+    .favorite {
+        background-color: #475058;
+        color: #ffff00;
+    }
+
+    .favorite:hover {
+        background-color: #5b6670;
+    }
+
+    .not-favorite {
+        background-color: #5b6670;
+        color: #ffffff;
+    }
+
+    .not-favorite:hover {
+        background-color: #475058;
+    }
+
     .profile-info {
         background-color: #898989;
     }
