@@ -10,41 +10,47 @@ export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
     const { userId } = useContext(UserContext)
     const navigate = useNavigate()
-    const [menu, setMenue] = useState(false)
+    const [menuOpen, setMenueOpen] = useState(false)
 
     const handleLogout = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
         navigate("/", { replace: true })
     }
 
-    const handleNavMenu = () => {
-        setMenue(!menu)
-    }
-
     return (
-        <div className="navBar">
+        <>
+            <div className="navBar" id="navbar">
 
-            <button className="hamburger-btn" onClick={handleNavMenu}> &#9776; </button>
-            
-                <div className={`menu ${menu ? 'open' : 'closed'}`}>
+                <button id="navbar" className="hamburger-btn" onClick={() => { setMenueOpen(!menuOpen) }}> &#9776; </button>
+
+                <div id="navbar" className={`menu ${menuOpen && 'open'}`}>
                     <div className="menu-list">
-                        <Link to={`/my-docs`}>My Docs</Link>
-                        <Link to={`/all-docs`}>All Docs</Link>
-                        <Link to={`/favorites`}>Favorite Docs</Link>
-                        <Link to={`/recent-docs`}>Recent Docs</Link>
-                        <Link to={`/profile/${userId}`}>View Profile</Link>
-                        <button onClick={handleLogout}>Logout</button>
-                        <Form>
-                            <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode} onChange={() => { setLightMode(!lightMode) }}></Form.Check>
+                        <div className="arrows">
+                            <button className="menu-item bi bi-arrow-left" onClick={() => { navigate(-1) }}></button>
+                            <button className="menu-item bi bi-arrow-right" onClick={() => { navigate(+1) }}></button>
+                        </div>
+
+                        <Link className="menu-item" to={`/my-docs`}>My Docs</Link>
+                        <Link className="menu-item" to={`/all-docs`}>All Docs</Link>
+                        <Link className="menu-item" to={`/favorites`}>Favorite Docs</Link>
+                        <Link className="menu-item" to={`/recent-docs`}>Recent Docs</Link>
+                        <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
+
+                        <button className="menu-item" onClick={handleLogout}>Logout</button>
+
+                        <Form className="menu-item switch">
+                            <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode || false} onChange={() => { setLightMode(!lightMode) }}></Form.Check>
                         </Form>
                     </div>
                 </div>
 
-            <div className="img-container">
-                <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
-            </div>
+                <div className="img-container">
+                    <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
+                </div>
 
-        </div>
+            </div>
+            <div className="spacing"></div>
+        </>
 
     )
 }
