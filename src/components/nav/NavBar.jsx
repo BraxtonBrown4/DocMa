@@ -1,13 +1,16 @@
 import { useNavigate, Link } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Form } from "react-bootstrap"
+import { Form, Dropdown } from "react-bootstrap"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
+import { getAllDepartments } from "../../services/departmentService"
 
 export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
+    const [allDepartments, setAllDepartments] = useState([])
+    const [departmentPH, setDepartmentPH] = useState('Departments')
     const { userId } = useContext(UserContext)
     const navigate = useNavigate()
     const [menuOpen, setMenuOpen] = useState(false)
@@ -17,19 +20,30 @@ export const NavBar = () => {
         navigate("/", { replace: true })
     }
 
+    const handleDepartmentClick = (depId, depName) => {
+    
+        setDepartmentPH(depName)
+      }
+
+    useEffect(() => {
+        getAllDepartments().then((res) => {
+            setAllDepartments(res)
+        })
+    }, [])
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (!event.target.closest("#navbar")) {
                 setMenuOpen(false);
             }
-        };
+        }
 
         document.addEventListener("click", handleClickOutside);
 
         return () => {
             document.removeEventListener("click", handleClickOutside);
-        };
-    }, []);
+        }
+    }, [])
 
     return (
         <>
@@ -52,6 +66,24 @@ export const NavBar = () => {
                         </Form>
                     </div>
                 </div>
+
+                {
+                    window.location.pathname.includes("docs") &&
+                    <div className="input-div">
+                        <input type="text" />
+                        <Dropdown>
+                            <Dropdown.Toggle id="dropdown-basic">
+                                {departmentPH}
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                {allDepartments.map(department => {
+                                    return <Dropdown.Item key={department.id} onClick={() => { handleDepartmentClick(department.id, department.name) }}>{department.name}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div>
+                }
 
                 <div className="img-container">
                     <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
