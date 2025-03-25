@@ -2,54 +2,65 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 10vh;
+    height: 50px;
     width: 100%;
-    background-color: #343a40;
-    justify-content: space-around;
-
-    .dropdown-toggle::after {
-        display: none !important;
-    }
-
-    form {
-        margin-top: 10%;
-    }
-
-    .form-switch {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: unset;
-    }
-
-    .form-switch,
-    .form-check,
-    .form-check-input {
-        margin-left: unset;
-    }
+    background: linear-gradient(to right, rgb(52, 58, 64) 55%, rgb(0, 0, 0) 80%);
+    position: fixed;
 }
 
-    .nav-btn {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border-radius: 7px;
-        background-color: #0d6efd;
-        transition: background-color 0.3s ease;
+.hamburger-btn {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    color: #ffffff;
+    background-color: unset;
+    border: unset;
+}
 
-        a {
-            color: white;
-            text-decoration: unset;
-        }
-    }
+.menu {
+    position: fixed;
+    top: 50px;
+    height: 100vh;
+    width: 300px;
+    background: linear-gradient(to bottom, rgb(226, 226, 226) 80%, rgba(0, 0, 0, 0));
+}
 
-    .nav-btn:hover {
-        background-color: blue;
-    }
+.open {
+    left: 0px;
+    transition: ease-in-out 0.4s;
 
-    .dropdown-size,
-    .nav-btn {
-        height: 40px;
-        width: 110px;
-    }
+}
+
+.closed {
+    left: -300px;
+    transition: ease-in-out 0.4s;
+
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container {
+    height: 40px;
+    width: 40px;
+
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-options {
+    height: 95vh;
+    width: clamp(30vw, 100vw, 200px);
+    top: 5vh;
+    background-color: white;
+}
