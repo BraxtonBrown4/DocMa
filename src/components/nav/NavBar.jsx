@@ -39,11 +39,6 @@ export const NavBar = () => {
 
                 <div id="navbar" className={`menu ${menuOpen && 'open'}`}>
                     <div className="menu-list">
-                        <div className="arrows">
-                            <button className="menu-item bi bi-arrow-left" onClick={() => { navigate(-1) }}></button>
-                            <button className="menu-item bi bi-arrow-right" onClick={() => { navigate(+1) }}></button>
-                        </div>
-
                         <Link className="menu-item" to={`/my-docs`}>My Docs</Link>
                         <Link className="menu-item" to={`/all-docs`}>All Docs</Link>
                         <Link className="menu-item" to={`/favorites`}>Favorite Docs</Link>

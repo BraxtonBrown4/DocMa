@@ -42,13 +42,6 @@
 
 }
 
-.arrows {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10%;
-}
-
 .menu-item {
     margin-top: 10%;
     color: #0d6efd;
