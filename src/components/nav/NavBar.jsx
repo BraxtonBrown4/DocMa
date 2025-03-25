@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Form } from "react-bootstrap"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
 
@@ -10,18 +10,32 @@ export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
     const { userId } = useContext(UserContext)
     const navigate = useNavigate()
-    const [menuOpen, setMenueOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false)
 
     const handleLogout = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
         navigate("/", { replace: true })
     }
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest("#navbar")) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
     return (
         <>
             <div className="navBar" id="navbar">
 
-                <button id="navbar" className="hamburger-btn" onClick={() => { setMenueOpen(!menuOpen) }}> &#9776; </button>
+                <button id="navbar" className="hamburger-btn" onClick={() => { setMenuOpen(!menuOpen) }}> &#9776; </button>
 
                 <div id="navbar" className={`menu ${menuOpen && 'open'}`}>
                     <div className="menu-list">
