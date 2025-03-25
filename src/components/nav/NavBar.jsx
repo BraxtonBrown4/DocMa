@@ -1,8 +1,8 @@
 import { useNavigate, Link } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Dropdown, Form } from "react-bootstrap"
-import { useContext } from "react"
+import { Form } from "react-bootstrap"
+import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
 
@@ -10,39 +10,56 @@ export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
     const { userId } = useContext(UserContext)
     const navigate = useNavigate()
+    const [menuOpen, setMenuOpen] = useState(false)
 
     const handleLogout = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
         navigate("/", { replace: true })
     }
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest("#navbar")) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div className="navBar">
+        <>
+            <div className="navBar" id="navbar">
 
-            <Dropdown>
-                <Dropdown.Toggle className="dropdown-size">Documents</Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <Dropdown.Item as={Link} to={`/my-docs`}>My Docs</Dropdown.Item>
-                    <Dropdown.Item as={Link} to={`/all-docs`}>All Docs</Dropdown.Item>
-                    <Dropdown.Item as={Link} to={`/favorites`}>Favorite Docs</Dropdown.Item>
-                    <Dropdown.Item as={Link} to={`/recent-docs`}>Recent Docs</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+                <button id="navbar" className="hamburger-btn" onClick={() => { setMenuOpen(!menuOpen) }}> &#9776; </button>
 
-            <div className="nav-btn">
-                <Link to="/create-doc">Create Doc</Link>
+                <div id="navbar" className={`menu ${menuOpen && 'open'}`}>
+                    <div className="menu-list">
+                        <Link className="menu-item" to={`/my-docs`}>My Docs</Link>
+                        <Link className="menu-item" to={`/all-docs`}>All Docs</Link>
+                        <Link className="menu-item" to={`/favorites`}>Favorite Docs</Link>
+                        <Link className="menu-item" to={`/recent-docs`}>Recent Docs</Link>
+                        <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
+
+                        <button className="menu-item" onClick={handleLogout}>Logout</button>
+
+                        <Form className="menu-item switch">
+                            <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode || false} onChange={() => { setLightMode(!lightMode) }}></Form.Check>
+                        </Form>
+                    </div>
+                </div>
+
+                <div className="img-container">
+                    <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
+                </div>
+
             </div>
+            <div className="spacing"></div>
+        </>
 
-            <Dropdown>
-                <Dropdown.Toggle className="dropdown-size">Profile</Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <Dropdown.Item as={Link} to={`/profile/${userId}`}>View Profile</Dropdown.Item>
-                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-                    <Form>
-                        <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode} onChange={() => {setLightMode(!lightMode)}}></Form.Check>
-                    </Form>
-                </Dropdown.Menu>
-            </Dropdown>
-        </div>
     )
 }
