@@ -41,7 +41,7 @@ export const NavBar = () => {
                     <div className="menu-list">
                         <Link className="menu-item" to={`/my-docs`}>My Docs</Link>
                         <Link className="menu-item" to={`/all-docs`}>All Docs</Link>
-                        <Link className="menu-item" to={`/favorites`}>Favorite Docs</Link>
+                        <Link className="menu-item" to={`/favorite-docs`}>Favorite Docs</Link>
                         <Link className="menu-item" to={`/recent-docs`}>Recent Docs</Link>
                         <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
 

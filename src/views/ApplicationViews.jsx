@@ -20,7 +20,7 @@ export const ApplicationViews = () => {
             <Route path="/" element={<><NavBar /> <Outlet /></>}>
                 <Route index element={<MyDocs />}></Route>
                 <Route path="/my-docs" element={<MyDocs />}></Route>
-                <Route path="/favorites" element={<Favorites />}></Route>
+                <Route path="/favorite-docs" element={<Favorites />}></Route>
                 <Route path="/all-docs" element={<AllDocs />}></Route>
                 <Route path="/create-doc" element={<CreateDoc />}></Route>
                 <Route path="/profile/:profileId" element={<Profile />}></Route>
