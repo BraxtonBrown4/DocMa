@@ -80,6 +80,7 @@ export const NavBar = () => {
                         <Link className="menu-item" to={`/all-docs`}>All Docs</Link>
                         <Link className="menu-item" to={`/favorite-docs`}>Favorite Docs</Link>
                         <Link className="menu-item" to={`/recent-docs`}>Recent Docs</Link>
+                        <Link className="menu-item" to={`/create-doc`}>Create Doc</Link>
                         <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
 
                         <button className="menu-item" onClick={handleLogout}>Logout</button>

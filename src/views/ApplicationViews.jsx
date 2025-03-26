@@ -23,12 +23,12 @@ export const ApplicationViews = () => {
                     <Route index element={<MyDocs />}></Route>
                     <Route path="/my-docs" element={<MyDocs />}></Route>
                     <Route path="/favorite-docs" element={<Favorites />}></Route>
+                    <Route path="/recent-docs" element={<RecentDocs />}></Route>
                     <Route path="/all-docs" element={<AllDocs />}></Route>
                     <Route path="/create-doc" element={<CreateDoc />}></Route>
                     <Route path="/profile/:profileId" element={<Profile />}></Route>
                     <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
                     <Route path="/edit-doc/:docId" element={<EditDoc />}></Route>
-                    <Route path="/recent-docs" element={<RecentDocs />}></Route>
                     <Route path="/edit-profile" element={<EditProfile />}></Route>
                 </Route>
             </Routes>
