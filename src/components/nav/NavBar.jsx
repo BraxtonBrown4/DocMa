@@ -93,7 +93,7 @@ export const NavBar = () => {
                 </div>
 
                 {
-                    window.location.pathname.includes("docs") || window.location.pathname === "/" &&
+                    (window.location.pathname === "/" || window.location.pathname.includes("docs")) &&
                     <div className="input-div">
                         <i className="bi bi-info-circle info-icon" onClick={() => { setInfoOpen(!infoOpen) }}>
                             {
