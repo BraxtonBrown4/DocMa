@@ -107,7 +107,7 @@ export const NavBar = () => {
                             }
                         </i>
 
-                        <input type="text" onKeyDown={handleKeyDown} />
+                        <input type="text" onKeyDown={handleKeyDown} placeholder="Filter Documents"/>
 
                         <Dropdown>
                             <Dropdown.Toggle className="custom-dropdown">
