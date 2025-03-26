@@ -28,7 +28,12 @@
     width: 300px;
     background: linear-gradient(to bottom, rgb(185, 185, 185) 80%, rgba(0, 0, 0, 0));
     transition: ease-in-out 0.4s;
+}
 
+@media (max-width: 600px) {
+    .menu {
+        width: 50%;
+    }
 }
 
 .open {
