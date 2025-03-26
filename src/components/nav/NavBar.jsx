@@ -15,6 +15,10 @@ export const NavBar = () => {
     const navigate = useNavigate()
     const [menuOpen, setMenuOpen] = useState(false)
     const [infoOpen, setInfoOpen] = useState(false)
+    const [search, setSearch] = useState({
+        str: '',
+        depId: 0
+    })
 
     const getCapitals = (str) => str.match(/[A-Z]/g).join("")
 
@@ -23,8 +27,21 @@ export const NavBar = () => {
         navigate("/", { replace: true })
     }
 
-    const handleDepartmentClick = (depId, depName) => {
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            const copy = { ...search }
+            copy.str = event.target.value
 
+            setSearch(copy)
+            setSearch(event.target.value);
+        }
+    };
+
+    const handleDepartmentClick = (depId, depName) => {
+        const copy = { ...search }
+        copy.depId = depId
+
+        setSearch(copy)
         setDepartmentPH(depName.length > 12 ? getCapitals(depName) : depName)
     }
 
@@ -47,6 +64,10 @@ export const NavBar = () => {
             document.removeEventListener("click", handleClickOutside);
         }
     }, [])
+
+    useEffect(() => {
+        console.log('executing search')
+    }, [search])
 
     return (
         <>
@@ -73,16 +94,15 @@ export const NavBar = () => {
                 {
                     window.location.pathname.includes("docs") &&
                     <div className="input-div">
-                        <i className="bi bi-info-circle info-icon" onClick={() => {setInfoOpen(!infoOpen)}}>
+                        <i className="bi bi-info-circle info-icon" onClick={() => { setInfoOpen(!infoOpen) }}>
                             {
                                 infoOpen &&
                                 <div className="info-sheet"></div>
                             }
-                            </i>
+                        </i>
 
-                        
+                        <input type="text" onKeyDown={handleKeyDown} />
 
-                        <input type="text" />
                         <Dropdown>
                             <Dropdown.Toggle className="custom-dropdown">
                                 {departmentPH}
