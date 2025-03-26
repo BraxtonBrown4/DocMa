@@ -209,18 +209,6 @@
   "userDocReads": [
     {
       "userId": 1,
-      "documentId": 7,
-      "readDate": 1742586261,
-      "id": 34
-    },
-    {
-      "userId": 1,
-      "documentId": 10,
-      "readDate": 1742586265,
-      "id": 35
-    },
-    {
-      "userId": 1,
       "documentId": 15,
       "readDate": 1742586277,
       "id": 36
@@ -260,6 +248,18 @@
       "documentId": 1,
       "readDate": 1742933619,
       "id": 50
+    },
+    {
+      "userId": 1,
+      "documentId": 10,
+      "readDate": 1742936765,
+      "id": 51
+    },
+    {
+      "userId": 1,
+      "documentId": 7,
+      "readDate": 1742945865,
+      "id": 52
     }
   ]
 }

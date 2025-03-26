@@ -3,12 +3,14 @@ import { deleteDocById, getFavoritesByUserId,  } from "../../services/docsServic
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { Doc } from "../Doc/Doc"
 import "./Favorites.css"
+import { SearchContext } from "../../customReact/contexts/SearchContext"
 
 export const Favorites = () => {
     const [favorites, setFavorites] = useState([])
     const [deleteId, setDeleteId] = useState(0)
     const { userId } = useContext(UserContext)
     const [noDocMsg, setNoDocMsg] = useState('')
+    const { searchFilter } = useContext(SearchContext)
 
     useEffect(() => {
         if (userId > 0) {
@@ -36,7 +38,7 @@ export const Favorites = () => {
         <div className="favorites-container">
             <header>Favorites</header>
             <h1 className="no-doc-msg">{noDocMsg}</h1>
-            {favorites.map(docInfo => {
+            {searchFilter(favorites).map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
             })}
         </div>

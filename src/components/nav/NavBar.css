@@ -71,6 +71,70 @@
     }
 }
 
+.input-div {
+    height: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .info-icon {
+        position: relative;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+
+    input {
+        border: 1px solid #dadada; 
+    }
+    
+    .custom-dropdown {
+        background-color: #ffffff;
+        color: #000000;
+        border-color: #dadada;
+        border-top-left-radius: unset;
+        border-bottom-left-radius: unset;
+        width: 110px;
+        font-size: 12px;
+    }
+
+    .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+        color: #000000;
+        background-color: #dadada;
+        border-color: #bebebe;
+    }
+}
+
+.info-sheet {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    border: 2px solid #e6e6e6;
+    background-color: #ffffff;
+    top: 300%;
+    left: 600%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: #000000;
+    opacity: 0.9;
+
+    li {
+        margin-top: 20px;
+    }
+}
+
+
 .img-container {
     height: 40px;
     width: 40px;

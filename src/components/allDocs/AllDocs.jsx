@@ -3,11 +3,13 @@ import { deleteDocById, getAllDocs } from "../../services/docsService"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { Doc } from "../Doc/Doc"
 import "./AllDocs.css"
+import { SearchContext } from "../../customReact/contexts/SearchContext"
 
 export const AllDocs = () => {
     const [allDocs, setAllDocs] = useState([])
     const [deleteId, setDeleteId] = useState(0)
     const { userId } = useContext(UserContext)
+    const { searchFilter } = useContext(SearchContext)
     const [noDocMsg, setNoDocMsg] = useState('')
 
     const handleRender = () => {
@@ -37,7 +39,7 @@ export const AllDocs = () => {
         <div className="allDocs-container">
             <header >All Docs</header>
             <h1 className="no-doc-msg">{noDocMsg}</h1>
-            {allDocs.map(docInfo => {
+            {searchFilter(allDocs).map(docInfo => {
                 return <Doc key={docInfo.id} docInfo={docInfo} setDeleteId={setDeleteId} deleteId={deleteId} />
             })}
         </div>
