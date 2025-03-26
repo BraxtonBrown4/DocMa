@@ -71,6 +71,44 @@
     }
 }
 
+.input-div {
+    height: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .info-btn {
+        color: #ffffff;
+    }
+
+    input {
+        border: 1px solid #dadada; 
+    }
+    
+    .custom-dropdown {
+        background-color: #ffffff;
+        color: #000000;
+        border-color: #dadada;
+        border-top-left-radius: unset;
+        border-bottom-left-radius: unset;
+    }
+
+    .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+        color: #000000;
+        background-color: #dadada;
+        border-color: #bebebe;
+    }
+}
+
+
 .img-container {
     height: 40px;
     width: 40px;

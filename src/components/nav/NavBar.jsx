@@ -70,13 +70,15 @@ export const NavBar = () => {
                 {
                     window.location.pathname.includes("docs") &&
                     <div className="input-div">
+                        <button className="btn bi bi-info-circle info-btn"></button>
                         <input type="text" />
                         <Dropdown>
-                            <Dropdown.Toggle id="dropdown-basic">
+                            <Dropdown.Toggle className="custom-dropdown">
                                 {departmentPH}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
+                            <Dropdown.Item key={0} onClick={() => { handleDepartmentClick(0, "Departments") }}>Departments</Dropdown.Item>
                                 {allDepartments.map(department => {
                                     return <Dropdown.Item key={department.id} onClick={() => { handleDepartmentClick(department.id, department.name) }}>{department.name}</Dropdown.Item>
                                 })}
