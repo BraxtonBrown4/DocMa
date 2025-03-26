@@ -7,6 +7,7 @@ import { UserContext } from "../../customReact/contexts/UserContext"
 import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
 import { getAllDepartments } from "../../services/departmentService"
 import { SearchContext } from "../../customReact/contexts/SearchContext"
+import { CustomColors } from "../customColors/CustomColors"
 
 export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
@@ -83,11 +84,14 @@ export const NavBar = () => {
                         <Link className="menu-item" to={`/create-doc`}>Create Doc</Link>
                         <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
 
+
                         <button className="menu-item" onClick={handleLogout}>Logout</button>
 
                         <Form className="menu-item switch">
                             <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode || false} onChange={() => { setLightMode(!lightMode) }}></Form.Check>
                         </Form>
+
+                        <CustomColors setMenuOpen={setMenuOpen}/>
                     </div>
                 </div>
 
