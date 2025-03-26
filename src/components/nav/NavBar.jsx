@@ -100,11 +100,11 @@ export const NavBar = () => {
                                 infoOpen &&
                                 <ul className="info-sheet">
                                     <li>To cross search, use forward slashes /</li>
-                                    <li>Author/Body/Title</li>
+                                    <li>Author/Title/Body</li>
                                     <li>Individual searches</li>
                                     <li>Author</li>
-                                    <li>/Body</li>
-                                    <li>//Title</li>
+                                    <li>/Title</li>
+                                    <li>//Body</li>
                                 </ul>
                             }
                         </i>
