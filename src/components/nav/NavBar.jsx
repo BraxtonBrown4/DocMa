@@ -97,7 +97,14 @@ export const NavBar = () => {
                         <i className="bi bi-info-circle info-icon" onClick={() => { setInfoOpen(!infoOpen) }}>
                             {
                                 infoOpen &&
-                                <div className="info-sheet"></div>
+                                <ul className="info-sheet">
+                                    <li>To cross search, use forward slashes /</li>
+                                    <li>Author/Body/Title</li>
+                                    <li>Individual searches</li>
+                                    <li>Author</li>
+                                    <li>/Body</li>
+                                    <li>//Title</li>
+                                </ul>
                             }
                         </i>
 

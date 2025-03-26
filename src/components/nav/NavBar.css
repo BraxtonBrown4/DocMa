@@ -117,14 +117,21 @@
 
 .info-sheet {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 250px;
     border-radius: 15px;
     border: 2px solid #e6e6e6;
     background-color: #ffffff;
     top: 300%;
-    left: 300%;
+    left: 600%;
+    text-align: center;
     transform: translateX(-50%);
+    color: #000000;
+    opacity: 0.9;
+
+    li {
+        margin-top: 20px;
+    }
 }
 
 
