@@ -14,6 +14,7 @@ export const NavBar = () => {
     const { userId } = useContext(UserContext)
     const navigate = useNavigate()
     const [menuOpen, setMenuOpen] = useState(false)
+    const [infoOpen, setInfoOpen] = useState(false)
 
     const getCapitals = (str) => str.match(/[A-Z]/g).join("")
 
@@ -72,7 +73,15 @@ export const NavBar = () => {
                 {
                     window.location.pathname.includes("docs") &&
                     <div className="input-div">
-                        <button className="btn bi bi-info-circle info-btn"></button>
+                        <i className="bi bi-info-circle info-icon" onClick={() => {setInfoOpen(!infoOpen)}}>
+                            {
+                                infoOpen &&
+                                <div className="info-sheet"></div>
+                            }
+                            </i>
+
+                        
+
                         <input type="text" />
                         <Dropdown>
                             <Dropdown.Toggle className="custom-dropdown">
