@@ -15,15 +15,17 @@ export const NavBar = () => {
     const navigate = useNavigate()
     const [menuOpen, setMenuOpen] = useState(false)
 
+    const getCapitals = (str) => str.match(/[A-Z]/g).join("")
+
     const handleLogout = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
         navigate("/", { replace: true })
     }
 
     const handleDepartmentClick = (depId, depName) => {
-    
-        setDepartmentPH(depName)
-      }
+
+        setDepartmentPH(depName.length > 12 ? getCapitals(depName) : depName)
+    }
 
     useEffect(() => {
         getAllDepartments().then((res) => {
@@ -78,7 +80,7 @@ export const NavBar = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                            <Dropdown.Item key={0} onClick={() => { handleDepartmentClick(0, "Departments") }}>Departments</Dropdown.Item>
+                                <Dropdown.Item key={0} onClick={() => { handleDepartmentClick(0, "Departments") }}>Departments</Dropdown.Item>
                                 {allDepartments.map(department => {
                                     return <Dropdown.Item key={department.id} onClick={() => { handleDepartmentClick(department.id, department.name) }}>{department.name}</Dropdown.Item>
                                 })}
@@ -86,10 +88,13 @@ export const NavBar = () => {
                         </Dropdown>
                     </div>
                 }
+                {
+                    window.matchMedia("(min-width: 450px)").matches &&
 
-                <div className="img-container">
-                    <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
-                </div>
+                    <div className="img-container">
+                        <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
+                    </div>
+                }
 
             </div>
             <div className="spacing"></div>
