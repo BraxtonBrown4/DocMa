@@ -12,7 +12,7 @@ export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
     const { setSearchObj } = useContext(SearchContext)
     const [allDepartments, setAllDepartments] = useState([])
-    const [departmentPH, setDepartmentPH] = useState('Departments')
+    const [departmentPH, setDepartmentPH] = useState('All Departments')
     const { userId } = useContext(UserContext)
     const navigate = useNavigate()
     const [menuOpen, setMenuOpen] = useState(false)
@@ -21,8 +21,6 @@ export const NavBar = () => {
         str: '',
         depId: 0
     })
-
-    const getCapitals = (str) => str.match(/[A-Z]/g).join("")
 
     const handleLogout = () => {
         localStorage.getItem("docma_user") && localStorage.removeItem("docma_user")
@@ -43,7 +41,7 @@ export const NavBar = () => {
         copy.depId = depId
 
         setSearch(copy)
-        setDepartmentPH(depName.length > 12 ? getCapitals(depName) : depName)
+        setDepartmentPH(depName)
     }
 
     useEffect(() => {
@@ -117,7 +115,7 @@ export const NavBar = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item key={0} onClick={() => { handleDepartmentClick(0, "Departments") }}>Departments</Dropdown.Item>
+                                <Dropdown.Item key={0} onClick={() => { handleDepartmentClick(0, "All Departments") }}>All Departments</Dropdown.Item>
                                 {allDepartments.map(department => {
                                     return <Dropdown.Item key={department.id} onClick={() => { handleDepartmentClick(department.id, department.name) }}>{department.name}</Dropdown.Item>
                                 })}

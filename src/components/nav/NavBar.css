@@ -104,8 +104,8 @@
         border-color: #dadada;
         border-top-left-radius: unset;
         border-bottom-left-radius: unset;
-        min-width: 110px;
-        font-size: 15px;
+        width: 110px;
+        font-size: 12px;
     }
 
     .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
