@@ -6,9 +6,11 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
 import { getAllDepartments } from "../../services/departmentService"
+import { SearchContext } from "../../customReact/contexts/SearchContext"
 
 export const NavBar = () => {
     const [lightMode, setLightMode] = useLightMode()
+    const { setSearchObj } = useContext(SearchContext)
     const [allDepartments, setAllDepartments] = useState([])
     const [departmentPH, setDepartmentPH] = useState('Departments')
     const { userId } = useContext(UserContext)
@@ -33,7 +35,6 @@ export const NavBar = () => {
             copy.str = event.target.value
 
             setSearch(copy)
-            setSearch(event.target.value);
         }
     };
 
@@ -66,7 +67,7 @@ export const NavBar = () => {
     }, [])
 
     useEffect(() => {
-        console.log('executing search')
+        setSearchObj(search)
     }, [search])
 
     return (

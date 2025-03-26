@@ -10,25 +10,29 @@ import { AllDocs } from "../components/allDocs/AllDocs"
 import { RecentDocs } from "../components/recentDocs/RecentDocs"
 import { useLightMode } from "../customReact/hooks/lightMode/useLightMode"
 import { EditProfile } from "../components/editProfile/EditProfile"
+import { SearchProvider } from "../customReact/contexts/SearchContext"
 
 export const ApplicationViews = () => {
     const [lightMode] = useLightMode()
 
     return (
         lightMode !== undefined &&
-        <Routes>
-            <Route path="/" element={<><NavBar /> <Outlet /></>}>
-                <Route index element={<MyDocs />}></Route>
-                <Route path="/my-docs" element={<MyDocs />}></Route>
-                <Route path="/favorite-docs" element={<Favorites />}></Route>
-                <Route path="/all-docs" element={<AllDocs />}></Route>
-                <Route path="/create-doc" element={<CreateDoc />}></Route>
-                <Route path="/profile/:profileId" element={<Profile />}></Route>
-                <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
-                <Route path="/edit-doc/:docId" element={<EditDoc />}></Route>
-                <Route path="/recent-docs" element={<RecentDocs />}></Route>
-                <Route path="/edit-profile" element={<EditProfile />}></Route>
-            </Route>
-        </Routes>
+        <SearchProvider>
+            <Routes>
+                <Route path="/" element={<><NavBar /> <Outlet /></>}>
+                    <Route index element={<MyDocs />}></Route>
+                    <Route path="/my-docs" element={<MyDocs />}></Route>
+                    <Route path="/favorite-docs" element={<Favorites />}></Route>
+                    <Route path="/all-docs" element={<AllDocs />}></Route>
+                    <Route path="/create-doc" element={<CreateDoc />}></Route>
+                    <Route path="/profile/:profileId" element={<Profile />}></Route>
+                    <Route path="/doc-details/:docId" element={<DocDetails />}></Route>
+                    <Route path="/edit-doc/:docId" element={<EditDoc />}></Route>
+                    <Route path="/recent-docs" element={<RecentDocs />}></Route>
+                    <Route path="/edit-profile" element={<EditProfile />}></Route>
+                </Route>
+            </Routes>
+        </SearchProvider>
+
     )
 }
