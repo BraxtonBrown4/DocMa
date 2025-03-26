@@ -11,9 +11,9 @@ export const CustomColors = ({setMenuOpen}) => {
             {isOpen && (
                 <div className="modal-overlay">
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <button className="bi bi-x-circle close-btn" onClick={() => setIsOpen(false)}></button>
                         <h2>Modal Title</h2>
                         <p>This is a modal content.</p>
-                        <button onClick={() => setIsOpen(false)}>Close</button>
                     </div>
                 </div>
             )}
