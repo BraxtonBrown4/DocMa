@@ -1,0 +1,34 @@
+.dropdown-container {
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    div {
+        margin-left: calc(100% - 32px);
+
+        .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+            background-color: unset;
+            color: #000000;
+            border-color: #000000;
+        }
+
+        .btn-primary {
+            background-color: unset;
+            color: #000000;
+            border-color: #000000;
+        }
+
+        .dropdown-menu {
+            min-width: unset !important;
+        }
+
+        button {
+            background-color: unset;
+            border-radius: unset;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 5px;
+            border-color: #000000;
+            color: #000000;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import { SketchPicker } from "react-color";
-import "./CustomColors.css"
 import { useState } from "react";
-import { Dropdown } from "react-bootstrap";
+import { OptionsDropdown } from "./OptionsDropdown";
+import "./CustomColors.css"
 
 export const CustomColors = ({ setMenuOpen }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +33,18 @@ export const CustomColors = ({ setMenuOpen }) => {
 
                                     <div className="color-schemes">
                                         <div className="color-scheme">
-                                            
+                                            <h2 onClick={() => {console.log("apply color scheme")}}>Dark Mode</h2>
                                         </div>
+
+                                        <div className="color-scheme">
+                                            <h2 onClick={() => {console.log("apply color scheme")}}>Light Mode</h2>
+                                        </div>
+                                        
                                         {/* insert color schemes .map here... with component? */}
+                                        <div className="color-scheme">
+                                            <OptionsDropdown/>
+                                            <h2 onClick={() => {console.log("apply color scheme")}}>Light Mode</h2>
+                                        </div>
                                     </div>
                                 </>
                             }
