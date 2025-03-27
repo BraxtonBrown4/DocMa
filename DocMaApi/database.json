@@ -49,7 +49,7 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5,
-      "colorId": 2
+      "colorSchemeId": 2
     },
     {
       "id": 2,
@@ -58,7 +58,7 @@
       "employmentDate": 1741967778,
       "title": "Production Technologies Assistant",
       "departmentId": 5,
-      "colorId": 1
+      "colorSchemeId": 1
     }
   ],
   "documents": [

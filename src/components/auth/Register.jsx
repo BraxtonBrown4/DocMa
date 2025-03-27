@@ -15,7 +15,7 @@ export const Register = (props) => {
     title: "",
     fullName: "",
     email: "",
-    isDarkMode: false
+    colorSchemeId: 1
 
   })
   let navigate = useNavigate()
