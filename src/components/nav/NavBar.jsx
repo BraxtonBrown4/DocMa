@@ -1,16 +1,14 @@
 import { useNavigate, Link } from "react-router-dom"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Form, Dropdown } from "react-bootstrap"
+import { Dropdown } from "react-bootstrap"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
-import { useLightMode } from "../../customReact/hooks/lightMode/useLightMode"
 import { getAllDepartments } from "../../services/departmentService"
 import { SearchContext } from "../../customReact/contexts/SearchContext"
 import { CustomColors } from "../customColors/CustomColors"
 
 export const NavBar = () => {
-    const [lightMode, setLightMode] = useLightMode()
     const { setSearchObj } = useContext(SearchContext)
     const [allDepartments, setAllDepartments] = useState([])
     const [departmentPH, setDepartmentPH] = useState('All Departments')
@@ -86,10 +84,6 @@ export const NavBar = () => {
 
 
                         <button className="menu-item" onClick={handleLogout}>Logout</button>
-
-                        <Form className="menu-item switch">
-                            <Form.Check type="switch" label={lightMode ? "Dark Mode" : "Light Mode"} checked={lightMode || false} onChange={() => { setLightMode(!lightMode) }}></Form.Check>
-                        </Form>
 
                         <CustomColors setMenuOpen={setMenuOpen}/>
                     </div>

@@ -8,15 +8,12 @@ import { EditDoc } from "../components/editDoc/editDoc"
 import { Favorites } from "../components/favorites/Favorites"
 import { AllDocs } from "../components/allDocs/AllDocs"
 import { RecentDocs } from "../components/recentDocs/RecentDocs"
-import { useLightMode } from "../customReact/hooks/lightMode/useLightMode"
 import { EditProfile } from "../components/editProfile/EditProfile"
 import { SearchProvider } from "../customReact/contexts/SearchContext"
 
 export const ApplicationViews = () => {
-    const [lightMode] = useLightMode()
 
     return (
-        lightMode !== undefined &&
         <SearchProvider>
             <Routes>
                 <Route path="/" element={<><NavBar /> <Outlet /></>}>
