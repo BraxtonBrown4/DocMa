@@ -1,0 +1,156 @@
+.colorScheme {
+
+    /* inherit traits */
+  
+    color: var(--primary-text);
+  
+    /* document overview css */
+  
+    .doc-info {
+      border-color: var(--doc-border);
+    }
+  
+    .department-div,
+    .title-div,
+    .author-div,
+    .ellipses-btn {
+      background-color: var(--doc-header);
+      border-color: var(--doc-border);
+    }
+  
+    .department-div {
+      h2 {
+        border-color: var(--doc-border);
+      }
+    }
+  
+    .ellipses-btn {
+      color: var(--primary-text);
+    }
+  
+    .body-div {
+      background-color: var(--doc-body);
+    }
+  
+    .author-div,
+    .body-div {
+      a {
+        color: var(--doc-links);
+      }
+    }
+  
+    /* document details css */
+  
+    .dd-info {
+      border-color: var(--doc-border);
+    }
+  
+    .dd-department-div,
+    .dd-title-div,
+    .dd-author-div,
+    .dd-ellipses-btn {
+      background-color: var(--doc-header);
+      border-color: var(--doc-border);
+    }
+  
+    .dd-department-div {
+      h2 {
+        border-color: var(--doc-border);
+      }
+    }
+  
+    .dd-ellipses-btn {
+      color: var(--primary-text);
+    }
+  
+    .dd-body-div {
+      background-color: var(--doc-body);
+    }
+  
+    .dd-author-div {
+      a {
+        color: var(--doc-links);
+      }
+    }
+  
+    /* create document css */
+  
+    .doc-container {
+      .document-info {
+        background-color: var(--create-doc-background);
+        border-color: var(--create-doc-border);
+      }
+  
+      h2 {
+          color: var(--create-doc-text);
+      }
+  
+      span {
+        color: var(--create-doc-text);
+      }
+    }
+  
+    /* edit document css */
+  
+    .edit-doc-container {
+      .document-info {
+        background-color: var(--edit-doc-background);
+        border-color: var(--edit-doc-border);
+      }
+  
+      h2 {
+          color: var(--edit-doc-text);
+      }
+  
+      span {
+        color: var(--edit-doc-text);
+      }
+    }
+  
+    /* favorite icons css */
+  
+    .favorite {
+      background-color: var(--favorited-icon-background);
+      color: var(--favorited-icon-color);
+    }
+  
+    .favorite:hover {
+      background-color: var(--not-favorited-icon-background);
+    }
+  
+    .not-favorite {
+      background-color: var(--not-favorited-icon-background);
+      color: var(--not-favorited-icon-color);
+    }
+  
+    .not-favorite:hover {
+      background-color: var(--favorited-icon-background);
+    }
+  
+    /* profile card css */
+  
+    .profile-info {
+      background-color: var(--profile-background);
+      border-color: var(--profile-border);
+  
+      h1 {
+        border-color: var(--profile-name-border);
+        background-color: var(--profile-name-background);
+        color: var(--profile-name-text);
+      }
+    }
+  
+    /* edit profile card css */
+  
+    .edit-profile-form {
+      background-color: var(--edit-profile-background);
+      border-color: var(--edit-profile-border);
+    }
+  
+    /* webpage background color */
+  
+    body {
+      background-color: var(--webpage-background);
+      color: inherit;
+    }
+  }
