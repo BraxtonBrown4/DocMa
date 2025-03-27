@@ -9,7 +9,7 @@
 }
 
 .profile-info {
-    border: 2px solid black;
+    border: 2px solid;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -20,11 +20,9 @@
     h1 {
         font-size: clamp(40px, 175%, 400%);
         padding: 0.5rem;
-        border: 2px solid black;
+        border: 2px solid;
         border-radius: 0.75rem;
         text-align: center;
-        background-color: white;
-        color: black;
         min-width: 268px;
         min-height: 60px;
     }

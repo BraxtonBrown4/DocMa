@@ -1,5 +1,5 @@
 .doc-info {
-    border: 2px solid black;
+    border: 2px solid;
     height: clamp(515px, 37.5vh, 80vh);
     width: clamp(300px, 15%, 30%);
     margin: 7vh 7%;
@@ -15,7 +15,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid;
 
     h2 {
         display: flex;
@@ -24,7 +24,7 @@
         height: 100%;
         flex-grow: 1;
         font-size: 20px;
-        border-right: 1px solid black;
+        border-right: 1px solid;
     }
 
     .dropdown-toggle::after {
@@ -50,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid;
     width: 100%;
     height: 15%;
 
@@ -68,7 +68,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid;
 
     .author {
         font-size: clamp(15px, 25px, 25px);
