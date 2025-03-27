@@ -56,6 +56,10 @@
     border: unset;
 }
 
+.dd-ellipses-btn:hover {
+    background-color: #00000040;
+  }
+
 .dd-title-div {
     display: flex;
     flex-direction: column;
@@ -110,4 +114,12 @@
         width: 80%;
         text-align: center;
     }
+}
+
+.dd-author-div {
+
+  a:hover {
+    transition: 0.25s;
+    filter: brightness(80%);
+  }
 }
