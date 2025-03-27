@@ -129,10 +129,22 @@ table {
   --doc-header: #f2f9ff;
   --doc-body: #e2e2e2;
   --doc-links: #0d6efd;
+  --doc-border: #000000;
+  --create-doc-background: #e2e2e2;
+  --create-doc-text: #000000;
+  --create-doc-border: #000000;
+  --edit-doc-background: #e2e2e2;
+  --edit-doc-text: #000000;
+  --edit-doc-border: #000000;
   --favorited-icon-background: #9f9f9f;
   --favorited-icon-color: #ffff00;
   --not-favorited-icon-background: #d3d3d3;
   --not-favorited-icon-color: #ffffff;
   --profile-background: #e2e2e2;
+  --profile-border: #000000;
+  --profile-name-border: #000000;
+  --profile-name-background: #ffffff;
+  --profile-name-text: #000000;
   --edit-profile-background: #e2e2e2;
+  --edit-profile-border: #000000;
 }
