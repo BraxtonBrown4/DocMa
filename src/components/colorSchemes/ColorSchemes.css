@@ -23,7 +23,6 @@
     width: 300px;
     height: calc(100% - 50px);
     color: black;
-    touch-action: none;
 }
 
 .location-container {
@@ -66,16 +65,27 @@
     display: flex;
     flex-direction: column;
 
-    h2 {
+    .default-scheme {
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        text-align: center;
-        margin-top: 40%;
+        align-items: center;
         text-decoration: underline;
         color: #0d6efd;
+        background-color: #00000000;
+        border: unset;
+        border-radius: 17px;
+    }
+
+    .default-scheme:hover {
+        transition: 0.25s;
+        background-color: #0d6efd;
+        color: #ffffff;
     }
 }
+
+
 
 .custom-color-menu {
     flex-grow: 1;
@@ -88,7 +98,8 @@
     .flexbox-fix {
         height: 45px;
         align-items: center;
-        div  {
+
+        div {
             padding: unset !important;
             height: 24px !important;
         }
@@ -101,12 +112,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+
     h2 {
         margin-left: auto;
         font-weight: bold;
     }
 }
+
 .close-btn {
     height: 100%;
     width: 25px;

@@ -1,22 +1,35 @@
 import { SketchPicker } from "react-color";
-import { useState } from "react";
-import { OptionsDropdown } from "./OptionsDropdown";
+import { useContext, useEffect, useState } from "react";
+import { OptionsDropdown } from "./optionsDropdown/OptionsDropdown";
 import "./ColorSchemes.css"
+import { UserContext } from "../../customReact/contexts/UserContext";
+import { getColorSchemesByUserId } from "../../services/colorSchemeService";
+import { useColorSchemes } from "../../customReact/hooks/colorSchemes/useColorSchemes";
 
 export const ColorSchemes = ({ setMenuOpen }) => {
+    const { userId } = useContext(UserContext)
     const [isOpen, setIsOpen] = useState(false);
     const [location, setLocation] = useState('home');
+    const [schemes, setSchemes] = useState([])
+    const [defaultSchemes, setDefaultSchemes] = useState([])
     const [color, setColor] = useState("ffffff");
+    const [colorScheme, setColorScheme] = useColorSchemes()
     const root = document.documentElement;
 
+    useEffect(() => {
+        if (userId > 0) {
+            getColorSchemesByUserId(userId).then((res) => {
+                setSchemes(res)
+            })
+        }
 
+        getColorSchemesByUserId(0).then((res) => {
+            setDefaultSchemes(res)
+        })
+    }, [userId])
+    
     const updateColor = (newColor) => {
         root.style.setProperty('--text-color', newColor.hex)
-    }
-
-    const handleColorSchemeChange = () => {
-
-        console.log('tried')
     }
 
     return (
@@ -29,7 +42,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                         <header className="colors-header">
                             {location !== "home" && <button className="cancel" onClick={() => { setLocation('home') }}>Cancel</button>}
                             <h2>{location === 'home' ? "Color Schemes" : "Custom Colors Menu"}</h2>
-                            <button className="bi bi-x-circle close-btn" onClick={() => setIsOpen(false)} disabled></button>
+                            <button className="bi bi-x-circle close-btn" onClick={() => setIsOpen(false)}></button>
                         </header>
 
                         <div className="location-container">
@@ -40,20 +53,22 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                     <button className="bi bi-plus-square new-btn" onClick={() => { setLocation('newColorScheme') }}></button>
 
                                     <div className="color-schemes">
-                                        <div className="color-scheme">
-                                            <h2 onClick={() => { handleColorSchemeChange }}>Dark Mode</h2>
-                                        </div>
 
-                                        <div className="color-scheme">
-                                            <h2 onClick={() => { console.log("apply color scheme") }}>Light Mode</h2>
-                                        </div>
-
-                                        {/* insert color schemes .map here... with component? */}
-                                        {/* make character limit of 13 on name */}
-                                        <div className="color-scheme">
-                                            <OptionsDropdown />
-                                            <h2 onClick={() => { console.log("apply color scheme") }}>example custom</h2>
-                                        </div>
+                                        {
+                                            defaultSchemes.map(scheme => {
+                                                return <div className="color-scheme">
+                                                    <button className="default-scheme" onClick={() => {setColorScheme(scheme)}}>{scheme.name}</button>
+                                                </div>
+                                            })
+                                        }
+                                        {
+                                            schemes.map(scheme => {
+                                                return <div className="color-scheme">
+                                                    <OptionsDropdown setLocation={setLocation}/>
+                                                    <button className="default-scheme" onClick={() => {setColorScheme(scheme)}}>{scheme.name}</button>
+                                                </div>
+                                            })
+                                        }
                                     </div>
                                 </>
                             }
@@ -62,6 +77,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                 location === 'newColorScheme' &&
                                 <>
                                     <div className="custom-color-menu">
+                                        {/* make character limit of 13 on name */}
 
                                     </div>
 

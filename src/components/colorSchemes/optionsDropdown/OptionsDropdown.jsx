@@ -1,7 +1,7 @@
 import { Dropdown } from "react-bootstrap"
 import "./OptionsDropdown.css"
 
-export const OptionsDropdown = () => {
+export const OptionsDropdown = ({setLocation}) => {
 
     return (
         <div className="dropdown-container">
@@ -13,7 +13,7 @@ export const OptionsDropdown = () => {
                 <Dropdown.Menu>
                     <Dropdown.Item>Edit</Dropdown.Item>
                     {/* add functionality */}
-                    <Dropdown.Item>Delete</Dropdown.Item>
+                    <Dropdown.Item onClick={() => {setLocation('edit')}}>Delete</Dropdown.Item>
                     {/* add functionality */}
                 </Dropdown.Menu>
             </Dropdown>
