@@ -42,6 +42,7 @@
 
 .ellipses-btn {
     border-radius: unset;
+    border: #00000000;
     height: 100%;
 }
 
