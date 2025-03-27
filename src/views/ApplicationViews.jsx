@@ -10,10 +10,13 @@ import { AllDocs } from "../components/allDocs/AllDocs"
 import { RecentDocs } from "../components/recentDocs/RecentDocs"
 import { EditProfile } from "../components/editProfile/EditProfile"
 import { SearchProvider } from "../customReact/contexts/SearchContext"
+import { useColorSchemes } from "../customReact/hooks/colorSchemes/useColorSchemes"
 
 export const ApplicationViews = () => {
+    const [colorScheme, setColorScheme] = useColorSchemes()
 
     return (
+        colorScheme !== undefined &&
         <SearchProvider>
             <Routes>
                 <Route path="/" element={<><NavBar /> <Outlet /></>}>
