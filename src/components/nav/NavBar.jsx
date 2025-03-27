@@ -82,10 +82,10 @@ export const NavBar = () => {
                         <Link className="menu-item" to={`/create-doc`}>Create Doc</Link>
                         <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
 
+                        <ColorSchemes setMenuOpen={setMenuOpen}/>
 
                         <button className="menu-item" onClick={handleLogout}>Logout</button>
 
-                        <ColorSchemes setMenuOpen={setMenuOpen}/>
                     </div>
                 </div>
 
