@@ -22,7 +22,7 @@ export const useColorSchemes = () => {
     }, [userId])
 
     useEffect(() => {
-        if (userId > 0 && colorScheme.id > 0) {
+        if (userId > 0 && colorScheme !== undefined) {
             updateUser({ id: userId, colorSchemeId: colorScheme.id })
 
             Object.entries(colorScheme).forEach(([key, value]) => {
