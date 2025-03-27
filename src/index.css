@@ -124,11 +124,11 @@ table {
 }
 
 :root {
-  --primary-text: #000000;
-  --webpage-background: #ffffff;
-  --doc-header: #f2f9ff;
-  --doc-body: #e2e2e2;
-  --doc-links: #0d6efd;
+  --primary-text: #ffffff;
+  --webpage-background: #475058;
+  --doc-header: #8a959f;
+  --doc-body: #898989;
+  --doc-links: #ffffff;
   --doc-border: #000000;
   --create-doc-background: #e2e2e2;
   --create-doc-text: #000000;
@@ -136,15 +136,15 @@ table {
   --edit-doc-background: #e2e2e2;
   --edit-doc-text: #000000;
   --edit-doc-border: #000000;
-  --favorited-icon-background: #9f9f9f;
+  --favorited-icon-background: #475058;
   --favorited-icon-color: #ffff00;
-  --not-favorited-icon-background: #d3d3d3;
+  --not-favorited-icon-background: #5b6670;
   --not-favorited-icon-color: #ffffff;
-  --profile-background: #e2e2e2;
+  --profile-background: #898989;
   --profile-border: #000000;
   --profile-name-border: #000000;
   --profile-name-background: #ffffff;
   --profile-name-text: #000000;
-  --edit-profile-background: #e2e2e2;
+  --edit-profile-background: #898989;
   --edit-profile-border: #000000;
 }
