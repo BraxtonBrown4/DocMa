@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../customReact/contexts/UserContext"
 import { getAllDepartments } from "../../services/departmentService"
 import { SearchContext } from "../../customReact/contexts/SearchContext"
-import { CustomColors } from "../customColors/CustomColors"
+import { ColorSchemes } from "../colorSchemes/ColorSchemes"
 
 export const NavBar = () => {
     const { setSearchObj } = useContext(SearchContext)
@@ -85,7 +85,7 @@ export const NavBar = () => {
 
                         <button className="menu-item" onClick={handleLogout}>Logout</button>
 
-                        <CustomColors setMenuOpen={setMenuOpen}/>
+                        <ColorSchemes setMenuOpen={setMenuOpen}/>
                     </div>
                 </div>
 

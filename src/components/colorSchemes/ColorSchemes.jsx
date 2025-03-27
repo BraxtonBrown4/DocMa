@@ -1,9 +1,9 @@
 import { SketchPicker } from "react-color";
 import { useState } from "react";
 import { OptionsDropdown } from "./OptionsDropdown";
-import "./CustomColors.css"
+import "./ColorSchemes.css"
 
-export const CustomColors = ({ setMenuOpen }) => {
+export const ColorSchemes = ({ setMenuOpen }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [location, setLocation] = useState('home');
     const [color, setColor] = useState("ffffff");
@@ -21,7 +21,7 @@ export const CustomColors = ({ setMenuOpen }) => {
 
     return (
         <div>
-            <button className="modal-btn" onClick={() => { setIsOpen(true), setMenuOpen(false) }}>Custom Colors</button>
+            <button className="modal-btn" onClick={() => { setIsOpen(true), setMenuOpen(false) }}>Color Schemes</button>
 
             {isOpen && (
                 <div className="modal-overlay">
