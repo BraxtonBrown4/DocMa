@@ -11,9 +11,9 @@ export const OptionsDropdown = ({setLocation}) => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item onClick={() => {setLocation('edit')}}>Edit</Dropdown.Item>
                     {/* add functionality */}
-                    <Dropdown.Item onClick={() => {setLocation('edit')}}>Delete</Dropdown.Item>
+                    <Dropdown.Item>Delete</Dropdown.Item>
                     {/* add functionality */}
                 </Dropdown.Menu>
             </Dropdown>
