@@ -5,3 +5,13 @@ export const getColorSchemesByUserId = (userId) => {
 export const getColorSchemeById = (colorSchemeId) => {
     return fetch(`http://localhost:8088/colorSchemes/${colorSchemeId}`).then((res)=> res.json())
 }
+
+export const createColorScheme = (scheme) => {
+    return fetch(`http://localhost:8088/colorSchemes`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(scheme),
+      }).then((res)=> res.json())
+} 
