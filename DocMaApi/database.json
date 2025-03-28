@@ -49,7 +49,7 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5,
-      "colorSchemeId": 3
+      "colorSchemeId": 2
     },
     {
       "id": 2,
@@ -294,7 +294,7 @@
     },
     {
       "--primary-text": "#ffffff",
-      "--webpage-background": "#930000",
+      "--webpage-background": "#894848",
       "--doc-header": "#8a959f",
       "--doc-body": "#898989",
       "--doc-links": "#ffffff",
