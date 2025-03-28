@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { OptionsDropdown } from "./optionsDropdown/OptionsDropdown";
 import "./ColorSchemes.css"
 import { UserContext } from "../../customReact/contexts/UserContext";
-import { getColorSchemesByUserId } from "../../services/colorSchemeService";
+import { createColorScheme, getColorSchemesByUserId } from "../../services/colorSchemeService";
 import { useColorSchemes } from "../../customReact/hooks/colorSchemes/useColorSchemes";
 import { Dropdown } from "react-bootstrap";
 
@@ -16,6 +16,8 @@ export const ColorSchemes = ({ setMenuOpen }) => {
     const [color, setColor] = useState("ffffff");
     const [colorScheme, setColorScheme] = useColorSchemes()
     const [CSCopy, setCSCopy] = useState({})
+    const [selectedElement, setSelectedElement] = useState('')
+    const [placeholder, setPlaceHolder] = useState('Elements')
     const root = document.documentElement;
 
     useEffect(() => {
@@ -28,15 +30,45 @@ export const ColorSchemes = ({ setMenuOpen }) => {
         getColorSchemesByUserId(0).then((res) => {
             setDefaultSchemes(res)
         })
-    }, [userId])
+    }, [userId, colorScheme])
 
     const updateColor = (newColor) => {
+        document.documentElement.style.setProperty(selectedElement, newColor.hex)
         setColor(newColor.hex)
+
+        const copy = {...CSCopy}
+        
+        copy[selectedElement] = newColor.hex
+
+        setCSCopy(copy)
     }
 
     useEffect(() => {
-        setCSCopy(colorScheme)
+        const copy = {...colorScheme}
+
+        delete copy.id
+
+        copy.userId = userId
+
+        setCSCopy(copy)
     }, [colorScheme])
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        createColorScheme(CSCopy).then((res) => {
+            setColorScheme(res)
+            resetToHome()
+        })
+    }
+
+    const resetToHome = () => {
+        setColor("ffffff")
+        setSelectedElement('')
+        setPlaceHolder('Elements')
+        setLocation('home')
+    }
+
 
     return (
         <div>
@@ -81,17 +113,17 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                             {
                                 location === 'newColorScheme' &&
                                 <>
-                                    <div className="new-scheme-menu">
+                                    <form className="new-scheme-menu" onSubmit={handleSubmit}>
                                         <Dropdown>
                                             <Dropdown.Toggle id="dropdown-basic">
-                                                Elements
+                                                {placeholder}
                                             </Dropdown.Toggle>
 
-                                            <Dropdown.Menu className="custom-menu">
+                                            <Dropdown.Menu>
                                                 {
-                                                    Object.entries(colorScheme).map(([key, value]) => {
+                                                    Object.entries(colorScheme).map(([key]) => {
                                                         if (key !== "id" && key !== "userId" && key !== "name") {
-                                                            return <Dropdown.Item key={key} id={key} onClick={() => { console.log(key) }}>{ key.split('-').join(' ') + " color"}</Dropdown.Item>
+                                                            return <Dropdown.Item key={key} id={key} onClick={() => { setSelectedElement(key), setPlaceHolder(key.split('-').join(' ') + " color") }}>{ key.split('-').join(' ') + " color" }</Dropdown.Item>
 
                                                         }
                                                     })
@@ -99,11 +131,17 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                             </Dropdown.Menu>
                                         </Dropdown>
 
+                                        <input type="text" placeholder="Name" onChange={(e) => {
+                                            const copy = {...CSCopy}
+                                            copy.name = e.target.value
+                                            setCSCopy(copy)
+                                            }} required/>
+
                                         <div className="btns-container">
-                                            <button>Save</button>
+                                            <button type="submit">Save</button>
                                             <button onClick={() => {setLocation('home')}}>Cancel</button>
                                         </div>
-                                    </div>
+                                    </form>
 
                                     <SketchPicker color={color} onChange={updateColor} presetColors={[]} disableAlpha />
                                 </>
