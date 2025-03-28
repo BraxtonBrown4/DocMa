@@ -49,7 +49,7 @@
       "employmentDate": 1741967778,
       "title": "production technologies manager",
       "departmentId": 5,
-      "colorSchemeId": 2
+      "colorSchemeId": 3
     },
     {
       "id": 2,
@@ -318,6 +318,34 @@
       "--profile-name-text": "#000000",
       "--edit-profile-background": "#898989",
       "--edit-profile-border": "#000000"
+    },
+    {
+      "userId": 1,
+      "name": "black background",
+      "--primary-text": "#ffffff",
+      "--webpage-background": "#000000",
+      "--doc-header": "#8a959f",
+      "--doc-body": "#898989",
+      "--doc-links": "#ffffff",
+      "--doc-border": "#000000",
+      "--create-doc-background": "#e2e2e2",
+      "--create-doc-text": "#000000",
+      "--create-doc-border": "#000000",
+      "--edit-doc-background": "#e2e2e2",
+      "--edit-doc-text": "#000000",
+      "--edit-doc-border": "#000000",
+      "--favorited-icon-background": "#475058",
+      "--favorited-icon-color": "#ffff00",
+      "--not-favorited-icon-background": "#5b6670",
+      "--not-favorited-icon-color": "#ffffff",
+      "--profile-background": "#898989",
+      "--profile-border": "#000000",
+      "--profile-name-border": "#000000",
+      "--profile-name-background": "#ffffff",
+      "--profile-name-text": "#000000",
+      "--edit-profile-background": "#898989",
+      "--edit-profile-border": "#000000",
+      "id": 3
     }
   ]
 }
