@@ -23,6 +23,8 @@
     width: 300px;
     height: calc(100% - 50px);
     color: black;
+    overflow: hidden;
+    touch-action: none;
 }
 
 .location-container {
@@ -87,8 +89,31 @@
 
 
 
-.custom-color-menu {
+.new-scheme-menu {
+    height: 100%;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .dropdown-menu {
+        height: 90px;
+        overflow: hidden;
+        overflow-y: auto;
+        right: 50%;
+    }
+}
+
+.btns-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.custom-menu {
+    left: -65px !important;
 }
 
 .sketch-picker {
