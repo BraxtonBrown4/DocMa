@@ -2,10 +2,9 @@ import { SketchPicker } from "react-color";
 import { useContext, useEffect, useState } from "react";
 import "./ColorSchemes.css"
 import { UserContext } from "../../customReact/contexts/UserContext";
-import { createColorScheme, deleteColorSchemebyId, getColorSchemesByUserId } from "../../services/colorSchemeService";
+import { createColorScheme, getColorSchemesByUserId, updateColorScheme } from "../../services/colorSchemeService";
 import { useColorSchemes } from "../../customReact/hooks/colorSchemes/useColorSchemes";
 import { Dropdown } from "react-bootstrap";
-import { getUserById, updateUser } from "../../services/userService";
 
 export const ColorSchemes = ({ setMenuOpen }) => {
     const { userId } = useContext(UserContext)
@@ -40,8 +39,6 @@ export const ColorSchemes = ({ setMenuOpen }) => {
     useEffect(() => {
         const copy = { ...colorScheme }
 
-        delete copy.id
-
         copy.userId = userId
 
         setCSCopy(copy)
@@ -50,7 +47,11 @@ export const ColorSchemes = ({ setMenuOpen }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        createColorScheme(CSCopy).then((res) => {
+        const copy = { ...CSCopy }
+        
+        delete copy.id
+
+        createColorScheme(copy).then((res) => {
             setColorScheme(res)
             resetToHome()
         })
@@ -70,16 +71,14 @@ export const ColorSchemes = ({ setMenuOpen }) => {
         setLocation('home')
     }
 
-    const handleDelete = (schemeId) => {
-        getUserById(userId).then((res) => {
-            if (schemeId === res.colorSchemeId) {
-                console.log("change")
-            } else {
-                deleteColorSchemebyId(schemeId)
-            }
+    const handleUpdate = (e) => {
+        e.preventDefault()
+
+        updateColorScheme(CSCopy).then((res) => {
+            setColorScheme(res)
+            resetToHome()
         })
     }
-
 
     return (
         <div>
@@ -116,8 +115,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                                             </Dropdown.Toggle>
 
                                                             <Dropdown.Menu>
-                                                                <Dropdown.Item onClick={() => { setLocation('edit') }}>Edit</Dropdown.Item>
-                                                                <Dropdown.Item onClick={() => { deleteColorSchemebyId(scheme.id) }}>Delete</Dropdown.Item>
+                                                                <Dropdown.Item onClick={() => { setLocation('edit'), setColorScheme(scheme) }}>Edit</Dropdown.Item>
                                                             </Dropdown.Menu>
                                                         </Dropdown>
                                                     </div>
@@ -151,6 +149,43 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                         </Dropdown>
 
                                         <input type="text" placeholder="Name" maxLength="10" onChange={(e) => {
+                                            const copy = { ...CSCopy }
+                                            copy.name = e.target.value
+                                            setCSCopy(copy)
+                                        }} required />
+
+                                        <div className="btns-container">
+                                            <button type="submit">Save</button>
+                                            <button onClick={resetToHome}>Cancel</button>
+                                        </div>
+                                    </form>
+
+                                    <SketchPicker color={color} onChange={updateColor} presetColors={[]} disableAlpha />
+                                </>
+                            }
+
+                            {
+                                location === 'edit' &&
+                                <>
+                                    <form className="new-scheme-menu" onSubmit={handleUpdate}>
+                                        <Dropdown>
+                                            <Dropdown.Toggle id="dropdown-basic">
+                                                {placeholder}
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+                                                {
+                                                    Object.entries(colorScheme).map(([key]) => {
+                                                        if (key !== "id" && key !== "userId" && key !== "name") {
+                                                            return <Dropdown.Item key={key} id={key} onClick={() => { setSelectedElement(key), setPlaceHolder(key.split('-').join(' ') + " color") }}>{key.split('-').join(' ') + " color"}</Dropdown.Item>
+
+                                                        }
+                                                    })
+                                                }
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+
+                                        <input type="text" value={CSCopy.name} maxLength="10" onChange={(e) => {
                                             const copy = { ...CSCopy }
                                             copy.name = e.target.value
                                             setCSCopy(copy)
