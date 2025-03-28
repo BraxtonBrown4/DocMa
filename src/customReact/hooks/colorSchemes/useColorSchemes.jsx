@@ -26,7 +26,7 @@ export const useColorSchemes = () => {
             updateUser({ id: userId, colorSchemeId: colorScheme.id })
 
             Object.entries(colorScheme).forEach(([key, value]) => {
-                if (key !== "id" || key !== "userId" || key !== "name") {
+                if (key !== "id" && key !== "userId" && key !== "name") {
                     document.documentElement.style.setProperty(key, value);
                 }
             })
