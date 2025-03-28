@@ -63,6 +63,13 @@ export const ColorSchemes = ({ setMenuOpen }) => {
     }
 
     const resetToHome = () => {
+
+        Object.entries(colorScheme).forEach(([key, value]) => {
+            if (key !== "id" && key !== "userId" && key !== "name") {
+                document.documentElement.style.setProperty(key, value);
+            }
+        })
+
         setColor("ffffff")
         setSelectedElement('')
         setPlaceHolder('Elements')
@@ -139,7 +146,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
 
                                         <div className="btns-container">
                                             <button type="submit">Save</button>
-                                            <button onClick={() => {setLocation('home')}}>Cancel</button>
+                                            <button onClick={resetToHome}>Cancel</button>
                                         </div>
                                     </form>
 
