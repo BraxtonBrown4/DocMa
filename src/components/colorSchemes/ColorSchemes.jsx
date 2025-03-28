@@ -2,18 +2,18 @@ import { SketchPicker } from "react-color";
 import { useContext, useEffect, useState } from "react";
 import "./ColorSchemes.css"
 import { UserContext } from "../../customReact/contexts/UserContext";
-import { createColorScheme, getColorSchemesByUserId } from "../../services/colorSchemeService";
+import { createColorScheme, deleteColorSchemebyId, getColorSchemesByUserId } from "../../services/colorSchemeService";
 import { useColorSchemes } from "../../customReact/hooks/colorSchemes/useColorSchemes";
 import { Dropdown } from "react-bootstrap";
+import { getUserById, updateUser } from "../../services/userService";
 
 export const ColorSchemes = ({ setMenuOpen }) => {
     const { userId } = useContext(UserContext)
     const [isOpen, setIsOpen] = useState(false);
     const [location, setLocation] = useState('home');
     const [schemes, setSchemes] = useState([])
-    const [defaultSchemes, setDefaultSchemes] = useState([])
     const [color, setColor] = useState("ffffff");
-    const [colorScheme, setColorScheme] = useColorSchemes()
+    const [colorScheme, setColorScheme, defaultColors] = useColorSchemes()
     const [CSCopy, setCSCopy] = useState({})
     const [selectedElement, setSelectedElement] = useState('')
     const [placeholder, setPlaceHolder] = useState('Elements')
@@ -24,10 +24,6 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                 setSchemes(res)
             })
         }
-
-        getColorSchemesByUserId(0).then((res) => {
-            setDefaultSchemes(res)
-        })
     }, [userId, colorScheme])
 
     const updateColor = (newColor) => {
@@ -74,6 +70,16 @@ export const ColorSchemes = ({ setMenuOpen }) => {
         setLocation('home')
     }
 
+    const handleDelete = (schemeId) => {
+        getUserById(userId).then((res) => {
+            if (schemeId === res.colorSchemeId) {
+                console.log("change")
+            } else {
+                deleteColorSchemebyId(schemeId)
+            }
+        })
+    }
+
 
     return (
         <div>
@@ -96,25 +102,22 @@ export const ColorSchemes = ({ setMenuOpen }) => {
 
                                     <div className="color-schemes">
 
-                                        {
-                                            defaultSchemes.map(scheme => {
-                                                return <div key={scheme.id} className="color-scheme">
-                                                    <button className="default-scheme" onClick={() => { setColorScheme(scheme) }}>{scheme.name}</button>
-                                                </div>
-                                            })
-                                        }
+                                        <div className="color-scheme">
+                                            <button className="default-scheme" onClick={() => { setColorScheme(defaultColors) }}>Default</button>
+                                        </div>
+
                                         {
                                             schemes.map(scheme => {
                                                 return <div key={scheme.id} className="color-scheme">
                                                     <div className="dropdown-container">
                                                         <Dropdown>
-                                                            <Dropdown.Toggle id="dropdown-basic" className="">
+                                                            <Dropdown.Toggle id="dropdown-basic">
                                                                 &#8942;
                                                             </Dropdown.Toggle>
 
                                                             <Dropdown.Menu>
                                                                 <Dropdown.Item onClick={() => { setLocation('edit') }}>Edit</Dropdown.Item>
-                                                                <Dropdown.Item>Delete</Dropdown.Item>
+                                                                <Dropdown.Item onClick={() => { deleteColorSchemebyId(scheme.id) }}>Delete</Dropdown.Item>
                                                             </Dropdown.Menu>
                                                         </Dropdown>
                                                     </div>

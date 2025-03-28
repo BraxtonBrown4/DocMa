@@ -15,7 +15,7 @@ export const Register = (props) => {
     title: "",
     fullName: "",
     email: "",
-    colorSchemeId: 1
+    colorSchemeId: 0
 
   })
   let navigate = useNavigate()

@@ -14,4 +14,9 @@ export const createColorScheme = (scheme) => {
         },
         body: JSON.stringify(scheme),
       }).then((res)=> res.json())
-} 
+}
+
+export const deleteColorSchemebyId = (colorSchemeId) => {
+    return fetch(`http://localhost:8088/colorSchemes/${colorSchemeId}`, {method: "DELETE"})
+
+}
