@@ -114,9 +114,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
 
                                                             <Dropdown.Menu>
                                                                 <Dropdown.Item onClick={() => { setLocation('edit') }}>Edit</Dropdown.Item>
-                                                                {/* add functionality */}
                                                                 <Dropdown.Item>Delete</Dropdown.Item>
-                                                                {/* add functionality */}
                                                             </Dropdown.Menu>
                                                         </Dropdown>
                                                     </div>
@@ -149,7 +147,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                             </Dropdown.Menu>
                                         </Dropdown>
 
-                                        <input type="text" placeholder="Name" onChange={(e) => {
+                                        <input type="text" placeholder="Name" maxLength="10" onChange={(e) => {
                                             const copy = { ...CSCopy }
                                             copy.name = e.target.value
                                             setCSCopy(copy)

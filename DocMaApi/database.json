@@ -321,7 +321,7 @@
     },
     {
       "userId": 1,
-      "name": "black background",
+      "name": "BlackBackG",
       "--primary-text": "#ffffff",
       "--webpage-background": "#000000",
       "--doc-header": "#8a959f",
