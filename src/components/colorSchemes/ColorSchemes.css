@@ -57,6 +57,7 @@
 }
 
 .color-scheme {
+    position: relative;
     height: 193px;
     width: 113px;
     border: 2px solid black;
@@ -160,6 +161,9 @@
 }
 
 .dropdown-container {
+    position: absolute;
+    left: 100%;
+
     .dropdown-toggle::after {
         display: none !important;
     }
