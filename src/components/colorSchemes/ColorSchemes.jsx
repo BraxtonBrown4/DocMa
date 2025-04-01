@@ -88,11 +88,12 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                 <div className="modal-overlay">
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <header className="colors-header">
+                            <h1></h1>
                             <h2>{location === 'home' ? "Color Schemes" : "Custom Colors Menu"}</h2>
                             <button className="bi bi-x-circle close-btn" onClick={() => setIsOpen(false)}></button>
                         </header>
 
-                        <div className="location-container">
+                        <div className={`location-container ${location !== 'home' && 'reverse'}`}>
 
                             {
                                 location === 'home' &&

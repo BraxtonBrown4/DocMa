@@ -111,7 +111,7 @@
   
     .favorite {
       background-color: var(--favorited-icon-background);
-      color: var(--favorited-icon-color);
+      color: var(--favorited-icon);
     }
   
     .favorite:hover {
@@ -120,7 +120,7 @@
   
     .not-favorite {
       background-color: var(--not-favorited-icon-background);
-      color: var(--not-favorited-icon-color);
+      color: var(--not-favorited-icon);
     }
   
     .not-favorite:hover {

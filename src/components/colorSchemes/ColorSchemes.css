@@ -7,6 +7,11 @@
     font-size: 20px;
 }
 
+.modal-btn:hover {
+    scale: 1.1;
+    color: #428dff;
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -30,8 +35,6 @@
 .location-container {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .new-btn {
@@ -49,11 +52,6 @@
 .color-schemes {
     height: 100%;
     width: calc(100% - 113px);
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
 }
 
 .color-scheme {
@@ -95,7 +93,6 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
 
     .dropdown-menu {
@@ -118,21 +115,6 @@
     }
 }
 
-.sketch-picker {
-    width: 35% !important;
-    padding: 3px !important;
-
-    .flexbox-fix {
-        height: 45px;
-        align-items: center;
-
-        div {
-            padding: unset !important;
-            height: 24px !important;
-        }
-    }
-}
-
 .colors-header {
     height: 25px;
     width: 100%;
@@ -143,6 +125,10 @@
     h2 {
         margin-left: auto;
         font-weight: bold;
+    }
+
+    h1 {
+        width: 25px;
     }
 }
 
@@ -171,7 +157,11 @@
     div {
         margin-left: calc(100% - 32px);
 
-        .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+        .btn-check:checked+.btn,
+        .btn.active,
+        .btn.show,
+        .btn:first-child:active,
+        :not(.btn-check)+.btn:active {
             background-color: unset;
             color: #000000;
             border-color: #000000;
@@ -209,4 +199,90 @@
         left: 93%;
         bottom: 90%;
     }
+
+    .location-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .color-schemes {
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .new-scheme-menu {
+        justify-content: space-around;
+    }
+
+    .sketch-picker {
+        width: 35% !important;
+        padding: 3px !important;
+
+        .flexbox-fix {
+            height: 45px;
+            align-items: center;
+
+            div {
+                padding: unset !important;
+                height: 24px !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .reverse {
+        display: flex;
+        flex-direction: column-reverse !important;
+    }
+
+    .location-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .color-schemes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+
+    .color-schemes::-webkit-scrollbar {
+        display: none;
+    }
+
+    .new-btn,
+    .color-scheme {
+        margin: 15px 0;
+    }
+
+    .new-scheme-menu {
+        .btns-container, input, .dropdown {
+            margin: 15px 0;
+        }
+    }
+
+    .sketch-picker {
+        margin-top: 10px;
+        width: 90% !important;
+        padding: 3px !important;
+
+        .flexbox-fix {
+            height: 45px;
+            align-items: center;
+
+            div {
+                padding: unset !important;
+                height: 24px !important;
+            }
+        }
+    }
+
 }
