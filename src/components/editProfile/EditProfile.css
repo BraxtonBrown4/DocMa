@@ -9,7 +9,7 @@
 }
 
 .edit-profile-form {
-    border: 2px solid black;
+    border: 2px solid;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
