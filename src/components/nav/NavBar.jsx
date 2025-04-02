@@ -82,7 +82,7 @@ export const NavBar = () => {
                         <Link className="menu-item" to={`/create-doc`}>Create Doc</Link>
                         <Link className="menu-item" to={`/profile/${userId}`}>View Profile</Link>
 
-                        <ColorSchemes setMenuOpen={setMenuOpen}/>
+                        <ColorSchemes setMenuOpen={setMenuOpen} />
 
                         <button className="menu-item" onClick={handleLogout}>Logout</button>
 
@@ -106,7 +106,7 @@ export const NavBar = () => {
                             }
                         </i>
 
-                        <input type="text" onKeyDown={handleKeyDown} placeholder="Filter Documents"/>
+                        <input type="text" onKeyDown={handleKeyDown} placeholder="Filter Documents" />
 
                         <Dropdown>
                             <Dropdown.Toggle className="custom-dropdown">
@@ -122,14 +122,9 @@ export const NavBar = () => {
                         </Dropdown>
                     </div>
                 }
-                {
-                    window.matchMedia("(min-width: 450px)").matches &&
-
-                    <div className="img-container">
-                        <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
-                    </div>
-                }
-
+                <div className="img-container">
+                    <img src="../../../assets/DocMaLogo.jpeg" alt="DocMa Logo"></img>
+                </div>
             </div>
             <div className="spacing"></div>
         </>
