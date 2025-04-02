@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: white;
+  background-color: #475058;
 
   form {
     display: flex;
@@ -15,7 +15,7 @@
     align-items: center;
     height: 75vh;
     width: clamp(300px, 30vw, 100vw);
-    background-color: lightgray;
+    background-color: #898989;
   }
 
   fieldset {
@@ -27,11 +27,11 @@
   }
 
   h1 {
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 175%;
   }
   h2 {
-    color: black;
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -42,6 +42,7 @@
   border-radius: 0.75rem;
   text-align: center;
   background-color: white;
+  color: black !important;
 }
 
 .input-field {
