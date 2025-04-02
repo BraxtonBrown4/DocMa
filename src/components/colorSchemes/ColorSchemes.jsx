@@ -155,7 +155,7 @@ export const ColorSchemes = ({ setMenuOpen }) => {
                                             setCSCopy(copy)
                                         }} required />
 
-                                        <div className="btns-container">
+                                        <div className="submit-cancle-container">
                                             <button type="submit">Save</button>
                                             <button onClick={resetToHome}>Cancel</button>
                                         </div>
